@@ -7,13 +7,31 @@
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script>
   </head>
   <body>
     <a-scene>
+      <a-asset-items
+        id="bottle"
+        src="https://cdn.glitch.com/f4d20005-e621-44df-8845-58843d86d147%2FWine_Bottle_White.glb?v=1573510574253"
+      ></a-asset-items>
+
       <!-- Camera -->
       <a-entity id="cameraRig" movement-controls>
-        <a-entity camera look-controls></a-entity>
+        <a-camera id="head" camera wasd-controls look-controls></a-camera>
+        <a-entity
+          sphere-collider="objects: a-gltf-model"
+          super-hands
+          hand-controls="left"
+        ></a-entity>
+        <a-entity
+          sphere-collider="objects: a-gltf-model"
+          super-hands
+          hand-controls="right"
+        >
+        </a-entity>
       </a-entity>
+
       <!-- Floor -->
       <a-plane
         static-body
@@ -23,25 +41,18 @@
         color="green"
       ></a-plane>
 
-      <!-- Immovable box -->
-      <a-box
-        static-body
-        position="0 0 -10"
-        width="3"
-        height="1"
-        depth="1"
-        color="red"
-      ></a-box>
-
-      <!-- Dynamic box -->
-      <a-box
+      <!-- Bottle -->
+      <a-gltf-model
         dynamic-body
-        position="0 10 -3"
-        width="1"
-        height="1"
-        depth="1"
-        color="blue"
-      ></a-box>
+        src="#bottle"
+        position="0 10 -1"
+        hoverable
+        grabbable
+        stretchable
+        draggable
+        dropppable
+      >
+      </a-gltf-model>
     </a-scene>
   </body>
 </html>
