@@ -21,16 +21,15 @@
       ></a-asset-items>
       <a-assets>
         <a-mixin
-          id="controller"
-          physics-collider
+          id="touch"
+          physics-collider=""
+          phase-shift=""
+          collision-filter="collisionForces: false"
           static-body="shape: sphere; sphereRadius: 0.02"
           super-hands="colliderEvent: collisions;
-                            colliderEventProperty: els;
-                            colliderEndEvent: collisions;
-                            colliderEndEventProperty: clearedEls"
-          collision-filter="group: super-hands;
-                                   collidesWith: gun, bottle;
-                                   collisionForces: false"
+                              colliderEventProperty: els;
+                              colliderEndEvent: collisions;
+                              colliderEndEventProperty: clearedEls;"
         >
         </a-mixin>
       </a-assets>
@@ -39,16 +38,33 @@
       <a-entity id="cameraRig" movement-controls>
         <a-camera id="head" camera wasd-controls look-controls></a-camera>
         <a-entity
-          
-          super-hands
-          hand-controls="left"
-          mixin="controller"
-        ></a-entity>
+          id="rhand"
+          mixin="touch"
+          vive-controls="hand: right"
+          oculus-touch-controls="hand: right"
+          windows-motion-controls="hand: right"
+          physics-collider=""
+          phase-shift=""
+          collision-filter=""
+          velocity=""
+          static-body=""
+          super-hands=""
+          position=""
+        >
+        </a-entity>
         <a-entity
-          
-          super-hands
-          hand-controls="right"
-          mixin="controller"
+          id="lhand"
+          mixin="touch"
+          vive-controls="hand: left"
+          oculus-touch-controls="hand: left"
+          windows-motion-controls="hand: left"
+          physics-collider=""
+          phase-shift=""
+          collision-filter=""
+          velocity=""
+          static-body=""
+          super-hands=""
+          position=""
         >
         </a-entity>
       </a-entity>
