@@ -28,7 +28,7 @@
                             colliderEventProperty: els;
                             colliderEndEvent: collisions;
                             colliderEndEventProperty: clearedEls"
-          collision-filter="group: hands;
+          collision-filter="group: super-hands;
                                    collidesWith: gun, bottle;
                                    collisionForces: false"
         >
@@ -39,13 +39,13 @@
       <a-entity id="cameraRig" movement-controls>
         <a-camera id="head" camera wasd-controls look-controls></a-camera>
         <a-entity
-          physics-collider
+          
           super-hands
           hand-controls="left"
           mixin="controller"
         ></a-entity>
         <a-entity
-          physics-collider
+          
           super-hands
           hand-controls="right"
           mixin="controller"
