@@ -15,6 +15,10 @@
         id="bottle"
         src="https://cdn.glitch.com/f4d20005-e621-44df-8845-58843d86d147%2FWine_Bottle_White.glb?v=1573510574253"
       ></a-asset-items>
+      <a-asset-items
+        id="gun"
+        src="https://cdn.glitch.com/6feb7739-2a15-4d1b-8115-fbc9d41002a8%2Fshotgun.glb?v=1573335974879"
+      ></a-asset-items>
 
       <!-- Camera -->
       <a-entity id="cameraRig" movement-controls>
@@ -44,7 +48,6 @@
       <!-- Bottle -->
       <a-gltf-model
         dynamic-body
-        
         src="#bottle"
         position="0 10 -1"
         hoverable
@@ -54,6 +57,19 @@
         dropppable
       >
       </a-gltf-model>
+      
+      <a-gltf-model
+        dynamic-body
+        src="#gun"
+        position="0 10 -1"
+        hoverable
+        grabbable
+        stretchable
+        draggable
+        dropppable
+      >
+      </a-gltf-model>
+      
     </a-scene>
   </body>
 </html>
