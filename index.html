@@ -11,11 +11,6 @@
   </head>
   <body>
     <a-scene physics="gravity: 0">
-      
-      
-      
-      
-      
       <a-asset-items
         id="bottle"
         src="https://cdn.glitch.com/f4d20005-e621-44df-8845-58843d86d147%2FWine_Bottle_White.glb?v=1573510574253"
@@ -24,19 +19,36 @@
         id="gun"
         src="https://cdn.glitch.com/6feb7739-2a15-4d1b-8115-fbc9d41002a8%2Fshotgun.glb?v=1573335974879"
       ></a-asset-items>
+      <a-assets>
+        <a-mixin
+          id="controller"
+          physics-collider
+          static-body="shape: sphere; sphereRadius: 0.02"
+          super-hands="colliderEvent: collisions;
+                            colliderEventProperty: els;
+                            colliderEndEvent: collisions;
+                            colliderEndEventProperty: clearedEls"
+          collision-filter="group: hands;
+                                   collidesWith: gun, bottle;
+                                   collisionForces: false"
+        >
+        </a-mixin>
+      </a-assets>
 
       <!-- Camera -->
       <a-entity id="cameraRig" movement-controls>
         <a-camera id="head" camera wasd-controls look-controls></a-camera>
         <a-entity
-          sphere-collider="objects: a-gltf-model"
+          physics-collider
           super-hands
           hand-controls="left"
+          mixin="controller"
         ></a-entity>
         <a-entity
-          sphere-collider="objects: a-gltf-model"
+          physics-collider
           super-hands
           hand-controls="right"
+          mixin="controller"
         >
         </a-entity>
       </a-entity>
@@ -51,30 +63,11 @@
       ></a-plane>
 
       <!-- Bottle -->
-      <a-gltf-model
-        dynamic-body
-        src="#bottle"
-        position="0 2 -1"
-        hoverable
-        grabbable
-        stretchable
-        draggable
-        dropppable
-      >
+      <a-gltf-model dynamic-body src="#bottle" position="0 1.6 -1" grabbable>
       </a-gltf-model>
-      
-      <a-gltf-model
-        dynamic-body
-        src="#gun"
-        position="2 2 -1"
-        hoverable
-        grabbable
-        stretchable
-        draggable
-        dropppable
-      >
+
+      <a-gltf-model dynamic-body src="#gun" position="1.5 1.6 -1" grabbable>
       </a-gltf-model>
-      
     </a-scene>
   </body>
 </html>
