@@ -21,15 +21,16 @@
       ></a-asset-items>
       <a-assets>
         <a-mixin
-          id="touch"
-          physics-collider=""
-          phase-shift=""
-          collision-filter="collisionForces: false"
+          id="controller"
+          physics-collider
           static-body="shape: sphere; sphereRadius: 0.02"
           super-hands="colliderEvent: collisions;
-                              colliderEventProperty: els;
-                              colliderEndEvent: collisions;
-                              colliderEndEventProperty: clearedEls;"
+                            colliderEventProperty: els;
+                            colliderEndEvent: collisions;
+                            colliderEndEventProperty: clearedEls"
+          collision-filter="group: hands;
+                                   collidesWith: red, blue;
+                                   collisionForces: false"
         >
         </a-mixin>
       </a-assets>
@@ -37,36 +38,8 @@
       <!-- Camera -->
       <a-entity id="cameraRig" movement-controls>
         <a-camera id="head" camera wasd-controls look-controls></a-camera>
-        <a-entity
-          id="rhand"
-          mixin="touch"
-          vive-controls="hand: right"
-          oculus-touch-controls="hand: right"
-          windows-motion-controls="hand: right"
-          physics-collider=""
-          phase-shift=""
-          collision-filter=""
-          velocity=""
-          static-body=""
-          super-hands=""
-          position=""
-        >
-        </a-entity>
-        <a-entity
-          id="lhand"
-          mixin="touch"
-          vive-controls="hand: left"
-          oculus-touch-controls="hand: left"
-          windows-motion-controls="hand: left"
-          physics-collider=""
-          phase-shift=""
-          collision-filter=""
-          velocity=""
-          static-body=""
-          super-hands=""
-          position=""
-        >
-        </a-entity>
+        <a-entity hand-controls="left" mixin="controller"></a-entity>
+        <a-entity hand-controls="right" mixin="controller"></a-entity>
       </a-entity>
 
       <!-- Floor -->
@@ -79,10 +52,22 @@
       ></a-plane>
 
       <!-- Bottle -->
-      <a-gltf-model dynamic-body src="#bottle" position="0 1.6 -1" grabbable>
+      <a-gltf-model
+        dynamic-body
+        src="#bottle"
+        position="0 1.6 -1"
+        grabbable
+        collision-filter="group: blue; collidesWith: default, red"
+      >
       </a-gltf-model>
 
-      <a-gltf-model dynamic-body src="#gun" position="1.5 1.6 -1" grabbable>
+      <a-gltf-model
+        dynamic-body
+        src="#gun"
+        position="1.5 1.6 -1"
+        grabbable
+        collision-filter="group: blue; collidesWith: default, red"
+      >
       </a-gltf-model>
     </a-scene>
   </body>
