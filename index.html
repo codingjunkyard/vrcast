@@ -29,8 +29,8 @@
                             colliderEndEvent: collisions;
                             colliderEndEventProperty: clearedEls"
           collision-filter="group: hands;
-                                   collidesWith: red, blue;
-                                   collisionForces: false"
+                                   collidesWith: items;
+                                   collisionForces: true"
         >
         </a-mixin>
       </a-assets>
@@ -57,7 +57,7 @@
         src="#bottle"
         position="0 1.6 -1"
         grabbable
-        collision-filter="group: blue; collidesWith: default, red"
+        collision-filter="group: items; collidesWith: items"
       >
       </a-gltf-model>
 
@@ -66,7 +66,7 @@
         src="#gun"
         position="1.5 1.6 -1"
         grabbable
-        collision-filter="group: blue; collidesWith: default, red"
+        collision-filter="group: items; collidesWith: items"
       >
       </a-gltf-model>
     </a-scene>
