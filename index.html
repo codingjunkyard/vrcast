@@ -8,10 +8,10 @@
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="https://unpkg.com/aframe-physics-extras@0.1.0/dist/aframe-physics-extras.min.js"></script>
     <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
   </head>
   <body>
-    <a-scene physics="gravity: 0">
+    <a-scene>
       <a-asset-items
         id="bottle"
         src="https://cdn.glitch.com/f4d20005-e621-44df-8845-58843d86d147%2FWine_Bottle_White.glb?v=1573510574253"
@@ -50,6 +50,7 @@
         width="20"
         height="20"
         color="green"
+        collision-filter="collidesWith: default, items, red, blue"
       ></a-plane>
 
       <!-- Bottle -->
