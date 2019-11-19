@@ -8,6 +8,7 @@
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
     <script src="https://unpkg.com/aframe-physics-extras@0.1.0/dist/aframe-physics-extras.min.js"></script>
     <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
   </head>
   <body>
     <a-scene physics="gravity: 0">
@@ -29,7 +30,7 @@
                             colliderEndEvent: collisions;
                             colliderEndEventProperty: clearedEls"
           collision-filter="group: hands;
-                                   collidesWith: items;
+                                   collidesWith: default, items;
                                    collisionForces: true"
         >
         </a-mixin>
@@ -57,7 +58,8 @@
         src="#bottle"
         position="0 1.6 -1"
         grabbable
-        collision-filter="group: items; collidesWith: items"
+        sleepy
+        collision-filter="group: items; collidesWith: default, items, hands"
       >
       </a-gltf-model>
 
@@ -66,7 +68,8 @@
         src="#gun"
         position="1.5 1.6 -1"
         grabbable
-        collision-filter="group: items; collidesWith: items"
+        sleepy
+        collision-filter="group: items; collidesWith: default, items, hands"
       >
       </a-gltf-model>
     </a-scene>
