@@ -6,7 +6,7 @@
     <script src="js/complog.js"></script>
   </head>
   <body>
-    <a-scene foo>
+    <a-scene>
       <a-assets>
         <img
           id="groundTexture"
@@ -40,6 +40,7 @@
         id="cameraRig"
         gamepad-controls="controller: 0"
         movement-controls
+        foo
       >
         <a-camera id="head" camera wasd-controls></a-camera>
         <a-entity id="left-hand" oculus-touch-controls="hand:left"></a-entity>
