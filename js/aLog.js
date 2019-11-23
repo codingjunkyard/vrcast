@@ -40,6 +40,11 @@ AFRAME.registerComponent("hudlog", {
     var el = this.el; // Reference to the component's entity.
     el.addEventListener('xbuttondown', function (evt) {
       AFRAME.log("xButton Pressed", "messagez")});
+    el.addEventListener('axismove', function (evt) {
+      AFRAME.log("thumbsticktouchstart", "messagez")});
+    
+    
+    
   },
 
   tick: function(t) {
