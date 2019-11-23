@@ -1,4 +1,7 @@
-AFRAME.registerComponent("foo", {
+AFRAME.registerComponent("rotate-player", {
+  
+  
+  
   update: function() {
     var camRig = this.el.querySelector("#cameraRig");
     var camRigRot = this.el
