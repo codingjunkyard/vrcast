@@ -13,12 +13,10 @@ AFRAME.registerComponent("hudlog", {
     el.addEventListener("xbuttondown", function(evt1) {
       AFRAME.log("xButton Pressed", "messagez");
     });
-    el.addEventListener("thumbstart", function(evt2) {
-      AFRAME.log("thumbstart", "messagez");
+    el.addEventListener("thumbrightstart", function(evt2) {
+      AFRAME.log("thumbrightstart", "messagez");
     });
-    el.addEventListener("axismove", function(evt3) {
-      AFRAME.log("axismove", "messagez");
-    });
+    
   },
 
   tick: function(t) {
