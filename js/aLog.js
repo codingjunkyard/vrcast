@@ -7,7 +7,7 @@ AFRAME.registerComponent("hudlog", {
   init: function() {
     var self = this;
 
-    //AFRAME.log(tracked-controls-webxr.gamepads, "messagez");
+    AFRAME.log(this.data, "messagez");
     
     
     
