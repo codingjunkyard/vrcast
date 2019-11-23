@@ -1,6 +1,7 @@
-AFRAME.registerComponent('foo', {
-  init: function () {
-   
-    console.log(this.el.querySelector();  // Reference to the scene element.
+AFRAME.registerComponent("foo", {
+  init: function() {
+    
+    console.log(this.el.querySelectorAll('a-box'));
+    
   }
 });
