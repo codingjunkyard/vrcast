@@ -1,10 +1,9 @@
 AFRAME.registerComponent("hudlog", {
   schema: {
-    message: { type: "string", default: "Hello, World!" }
+    message: { type: "string", default: "Hella, MetaVerse!" }
   },
-  
+
   init: function() {
-          
     var self = this;
 
     // Using setInterval for demo convenience, but in practice, should use tick.
@@ -38,12 +37,6 @@ AFRAME.registerComponent("hudlog", {
 
   tick: function(t) {
     AFRAME.log("Time: " + t, "time");
-  },
-  
-  logMessage: function(){
     AFRAME.log(this.data.message, "messagez");
-   }
-  
-  
-  
+  }
 });
