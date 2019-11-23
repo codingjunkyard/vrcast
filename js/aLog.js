@@ -5,40 +5,14 @@ AFRAME.registerComponent("hudlog", {
   },
 
   init: function() {
-    var self = this;
-
-    AFRAME.log(.sceneEl, "messagez");
     
-    
-    
-    // Using setInterval for demo convenience, but in practice, should use tick.
-    setInterval(function() {
-      self.logRandomColor();
-    }, 500);
 
-    setInterval(function() {
-      self.logRandomNumber();
-    }, 250);
-
-    this.el.emit("log", { message: "Logging started!" });
+    AFRAME.log(document, "messagez");
+    
+       
+   
   },
 
-  logRandomColor: function() {
-    var colors = [
-      "red",
-      "orange",
-      "yellow",
-      "green",
-      "blue",
-      "indigo",
-      "violet"
-    ];
-    AFRAME.log(colors[Math.floor(Math.random() * 7)], "colorz");
-  },
-
-  logRandomNumber: function() {
-    AFRAME.log(Math.random() * 10000, "numberz");
-  },
 
   update: function() {
     var el = this.el; // Reference to the component's entity.
@@ -55,3 +29,4 @@ AFRAME.registerComponent("hudlog", {
     AFRAME.log("Time: " + t, "time");
   }
 });
+m

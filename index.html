@@ -26,34 +26,18 @@
       >
         <a-camera id="head" camera wasd-controls></a-camera>
         <a-entity id="left-hand" oculus-touch-controls="hand:left"></a-entity>
-        <a-entity id="right-hand" oculus-touch-controls="hand:right" tracked-controls></a-entity>
+        <a-entity
+          id="right-hand"
+          oculus-touch-controls="hand:right"
+          tracked-controls
+        ></a-entity>
       </a-entity>
 
-      <a-entity layout="type: line; margin: 1.02" position="-2 2.5 -3">
-        <a-entity
-          log="channel: colorz"
-          geometry="primitive: plane; height: 5"
-          material="color: #222; shader: flat"
-        ></a-entity>
-        <a-log channel="messagez"></a-log>
-        <a-entity
-          log="channel: time"
-          geometry="primitive: plane; height: 5"
-          material="color: #FAFAFA"
-          text="color: #111"
-        ></a-entity>
-        <a-entity
-          log="channel: messagez"
-          geometry="primitive: plane; height: 5"
-          material="opacity: 0.5"
-        ></a-entity>
-        <a-entity
-          log
-          geometry="primitive: plane; height: 5"
-          material="color: #002B36"
-          text="color: red"
-        ></a-entity>
-      </a-entity>
+      <a-log
+        channel="messagez"
+        position="0 2 -3"
+        geometry="height:  3;  width:  5"
+      ></a-log>
 
       <a-plane
         src="#groundTexture"
