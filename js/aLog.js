@@ -7,7 +7,7 @@ AFRAME.registerComponent("hudlog", {
   init: function() {
     var self = this;
 
-    AFRAME.log(this.data, "messagez");
+    //AFRAME.log(this.data, "messagez");
     
     
     
