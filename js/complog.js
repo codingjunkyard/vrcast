@@ -8,13 +8,13 @@ AFRAME.registerComponent("foo", {
 
     this.el.addEventListener("abuttondown", function(evt1) {
       AFRAME.log("a Button Pressed");
-      camRig.setAttribute("rotation", { x: 0, y: (y+10), z: 0 });
+      camRig.setAttribute("rotation", { x: 0, y: (y+10), z: 0 }, true);
     });
     AFRAME.log(camRigRot);
     
     this.el.addEventListener("xbuttondown", function(evt1) {
       AFRAME.log("x Button Pressed");
-      camRig.setAttribute("rotation", { x: 0, y: (y-10), z: 0 });
+      camRig.setAttribute("rotation", { x: 0, y: (y-10), z: 0 }, true);
     });
     AFRAME.log(camRigRot);
     
