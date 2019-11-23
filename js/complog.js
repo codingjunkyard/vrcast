@@ -1,6 +1,7 @@
 AFRAME.registerComponent("foo", {
   init: function() {
-        console.log(this.el.getAttribute('rotation'));
+        console.log("Old Rotation"+this.el.querySelector('#cameraRig').getAttribute('rotation'));
+        AFRAME.log(this.el.querySelector('#cameraRig').getAttribute('rotation'));
     
   },
   
@@ -14,6 +15,7 @@ AFRAME.registerComponent("foo", {
    });
     
          console.log(this.el.getAttribute('rotation'));
+    AFRAME.log(this.el.getAttribute('rotation'));
    }
                                                   
 });
