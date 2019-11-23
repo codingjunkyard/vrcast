@@ -7,6 +7,10 @@ AFRAME.registerComponent("hudlog", {
   init: function() {
     var self = this;
 
+    AFRAME.log(tracked-controls-webvr.gamepads, "messagez");
+    
+    
+    
     // Using setInterval for demo convenience, but in practice, should use tick.
     setInterval(function() {
       self.logRandomColor();
@@ -40,7 +44,7 @@ AFRAME.registerComponent("hudlog", {
     var el = this.el; // Reference to the component's entity.
     el.addEventListener('xbuttondown', function (evt) {
       AFRAME.log("xButton Pressed", "messagez")});
-    el.addEventListener('axismove', function (evt) {
+    el.addEventListener(' onAxisMoved', function (evt) {
       AFRAME.log("thumbsticktouchstart", "messagez")});
     
     
