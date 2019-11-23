@@ -5,28 +5,18 @@ AFRAME.registerComponent("hudlog", {
   },
 
   init: function() {
-    
-
     AFRAME.log(document, "messagez");
-    
-       
-   
   },
-
 
   update: function() {
     var el = this.el; // Reference to the component's entity.
-    el.addEventListener('xbuttondown', function (evt1) {
-      AFRAME.log("xButton Pressed", "messagez")});
-    el.addEventListener('axismove', function (evt2) {
-      AFRAME.log("thumbsticktouchstart", "messagez")});
-    
-    
-    
+    el.addEventListener("xbuttondown", function(evt1) {
+      AFRAME.log("xButton Pressed", "messagez");
+    });
   },
 
   tick: function(t) {
-    AFRAME.log("Time: " + t, "time");
+    AFRAME.log("YOYO", "time");
   }
 });
-m
+m;

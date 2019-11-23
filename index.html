@@ -19,25 +19,6 @@
           src="https://cdn.aframe.io/a-painter/images/sky.jpg"
         />
       </a-assets>
-      <a-entity
-        id="cameraRig"
-        gamepad-controls="controller: 0"
-        movement-controls
-      >
-        <a-camera id="head" camera wasd-controls></a-camera>
-        <a-entity id="left-hand" oculus-touch-controls="hand:left"></a-entity>
-        <a-entity
-          id="right-hand"
-          oculus-touch-controls="hand:right"
-          tracked-controls
-        ></a-entity>
-      </a-entity>
-
-      <a-log
-        channel="messagez"
-        position="0 2 -3"
-        geometry="height:  3;  width:  5"
-      ></a-log>
 
       <a-plane
         src="#groundTexture"
@@ -55,6 +36,28 @@
         theta-length="90"
         width="2048"
       ></a-sky>
+
+      <!-- The Player rig. -->
+      <a-entity
+        id="cameraRig"
+        gamepad-controls="controller: 0"
+        movement-controls
+      >
+        <a-camera id="head" camera wasd-controls></a-camera>
+        <a-entity id="left-hand" oculus-touch-controls="hand:left"></a-entity>
+        <a-entity
+          id="right-hand"
+          oculus-touch-controls="hand:right"
+          tracked-controls
+        ></a-entity>
+      </a-entity>
+
+      <!-- The VR Console. -->
+      <a-log
+        channel="messagez"
+        position="0 2 -3"
+        geometry="height:  3;  width:  5"
+      ></a-log>
     </a-scene>
   </body>
 </html>
