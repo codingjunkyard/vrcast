@@ -8,7 +8,7 @@
     <script src="js/aLog.js"></script>
   </head>
   <body>
-    <a-scene main>
+    <a-scene hudlog>
       <a-assets>
         <img
           id="groundTexture"
@@ -19,27 +19,17 @@
           src="https://cdn.aframe.io/a-painter/images/sky.jpg"
         />
       </a-assets>
-<a-entity
+      <a-entity
         id="cameraRig"
         gamepad-controls="controller: 0"
         movement-controls
       >
         <a-camera id="head" camera wasd-controls></a-camera>
-        <a-entity
-          id="left-hand"
-          mixin="interaction"
-          hand-controls="left"
-        ></a-entity>
-        <a-entity
-          id="right-hand"
-          mixin="interaction"
-          hand-controls="right"
-          line="color: white"
-        >
-        </a-entity>
+        <a-entity id="left-hand" oculus-touch-controls="hand:left"></a-entity>
+        <a-entity id="right-hand" oculus-touch-controls="hand:right"></a-entity>
       </a-entity>
-      
-      <a-entity layout="type: line; margin: 1.2" position="-2 0 -3">
+
+      <a-entity layout="type: line; margin: 1.02" position="-2 2.5 -3">
         <a-entity
           log="channel: colorz"
           geometry="primitive: plane; height: 5"
@@ -71,7 +61,7 @@
         height="100"
         width="100"
       ></a-plane>
-      
+
       <a-light type="ambient" color="#445451"></a-light>
       <a-light type="point" intensity="2" position="2 4 4"></a-light>
       <a-sky

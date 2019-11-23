@@ -1,5 +1,5 @@
 
-      AFRAME.registerComponent('main', {
+      AFRAME.registerComponent('hudlog', {
         init: function () {
           var self = this;
 
