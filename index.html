@@ -6,7 +6,7 @@
     <script src="js/complog.js"></script>
   </head>
   <body>
-    <a-scene foo>
+    <a-scene >
       <a-assets>
         <img
           id="groundTexture"
@@ -18,7 +18,7 @@
         />
       </a-assets>
 
-      <a-plane
+      <a-plane 
         src="#groundTexture"
         rotation="-90 0 0"
         height="100"
@@ -36,13 +36,14 @@
       ></a-sky>
 
       <!-- The Player rig. -->
-      <a-entity
+      <a-entity 
         id="cameraRig"
         gamepad-controls="controller: 0"
         movement-controls
+                foo
         
       >
-        <a-camera id="head" camera wasd-controls></a-camera>
+        <a-camera id="head" camera wasd-controls ></a-camera>
         <a-entity id="left-hand" oculus-touch-controls="hand:left"></a-entity>
         <a-entity id="right-hand" oculus-touch-controls="hand:right"></a-entity>
       </a-entity>
