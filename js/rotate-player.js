@@ -6,12 +6,16 @@ AFRAME.registerComponent("rotate-player", {
 
     this.el.addEventListener("abuttondown", function(evt1) {
       this.setAttribute("rotation", { x: 0, y: y+=10, z: 0 });
-      
+      if(y==360){
+        y=0;
+      }
     });
     
     this.el.addEventListener("xbuttondown", function(evt1) {
            this.setAttribute("rotation", { x: 0, y: y-=10, z: 0 });
-      
+      if(y==-360){
+        y=0;
+      }
 
     });
   }
