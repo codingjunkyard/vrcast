@@ -7,7 +7,7 @@ AFRAME.registerComponent("hudlog", {
   init: function() {
     var self = this;
 
-    AFRAME.log(tracked-controls-webvr.gamepads, "messagez");
+    //AFRAME.log(tracked-controls-webxr.gamepads, "messagez");
     
     
     
@@ -42,9 +42,9 @@ AFRAME.registerComponent("hudlog", {
 
   update: function() {
     var el = this.el; // Reference to the component's entity.
-    el.addEventListener('xbuttondown', function (evt) {
+    el.addEventListener('xbuttondown', function (evt1) {
       AFRAME.log("xButton Pressed", "messagez")});
-    el.addEventListener(' onAxisMoved', function (evt) {
+    el.addEventListener('triggerchanged', function (evt2) {
       AFRAME.log("thumbsticktouchstart", "messagez")});
     
     
