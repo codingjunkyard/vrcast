@@ -2,6 +2,7 @@ AFRAME.registerComponent("rotate-player", {
   
   update: function() {
   var y=this.el.getAttribute('rotation').y;
+  <!--TODO: var playerAffector=querySelector('a-scene').querySelector(#cameraRig)-->
 
     this.el.addEventListener("abuttondown", function(evt1) {
       this.setAttribute("rotation", { x: 0, y: y-=10, z: 0 });
