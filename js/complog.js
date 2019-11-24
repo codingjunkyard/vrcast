@@ -3,7 +3,7 @@ AFRAME.registerComponent("vrlog", {
     var el = this.el; // Reference to the component's entity.
     AFRAME.log("Look at your controllers");
     AFRAME.log(el.querySelector('#cameraRig').getAttribute('rotation'));
-    
+        
   },
   update: function() {
      var el = this.el; // Reference to the component's entity.
@@ -17,5 +17,11 @@ AFRAME.registerComponent("vrlog", {
       AFRAME.log("aButton Pressed");
       AFRAME.log(el.querySelector('#cameraRig').getAttribute('rotation'));
     });
+    
+    el.addEventListener("axismove", function(evt2) {
+      AFRAME.log('axismove',evt2.detail.axis);
+      AFRAME.log(el.querySelector('#cameraRig').getAttribute('rotation'));
+    });
+    
   },
 })

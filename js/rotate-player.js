@@ -1,7 +1,6 @@
 AFRAME.registerComponent("rotate-player", {
   
   update: function() {
-    
   var y=this.el.getAttribute('rotation').y;
 
     this.el.addEventListener("abuttondown", function(evt1) {
