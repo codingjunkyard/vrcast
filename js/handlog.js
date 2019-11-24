@@ -10,12 +10,12 @@ FRAME.registerComponent("control-log", {
     var el = this.el; // Reference to the component's entity.
 
     el.addEventListener('axismove', function(evt2) {
-      AFRAME.log('axismove', evt2.detail.axis, "messagez");
+      AFRAME.log('axismove', evt2.detail.axis);
       console.log('axismove',evt2.detail.axis);
     });
   },
 
   tick: function(t) {
-    AFRAME.log("YOYO", "time");
+  
   }
 });
