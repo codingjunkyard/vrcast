@@ -1,8 +1,9 @@
 AFRAME.registerComponent("rotate-player", {
   
   update: function() {
+    console.log(this);
   var y=this.el.getAttribute('rotation').y;
-  //TODO: var playerAffector=querySelector('a-scene').querySelector(#cameraRig)
+  //TODO: var playerAffector=this.el.querySelector('a-scene').querySelector(#cameraRig)
 
     this.el.addEventListener("abuttondown", function(evt1) {
       //this.el.addEventListener("axismove", function(evt1) {
