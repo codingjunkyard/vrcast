@@ -1,6 +1,8 @@
 AFRAME.registerComponent("vrlog", {
   init: function(){
+    console.log(this.el);
     var el = this.el; // Reference to the component's entity.
+    
     AFRAME.log("Look at your controllers");
     AFRAME.log(el.querySelector('#cameraRig').getAttribute('rotation'));
         

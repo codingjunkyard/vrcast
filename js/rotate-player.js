@@ -14,9 +14,9 @@ AFRAME.registerComponent("rotate-player", {
     var playerGetter = document.querySelector("#cameraRig");
     var playerAffector = this.el.querySelector(data.hand);
     var y = playerGetter.getAttribute("rotation").y;
-    console.log(playerGetter);
+    /*console.log(playerGetter);
     console.log(playerAffector);
-    console.log(y);
+    console.log(y);*/
 
     if (data.hand == "#right-hand") {
       //gamepad-controls="controller: 1"

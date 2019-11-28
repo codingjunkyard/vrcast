@@ -5,9 +5,10 @@
     <script src="https://unpkg.com/aframe-log-component/dist/aframe-log-component.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.controls.min.js"></script>
     <script src="js/rotate-player.js"></script>
+    <script src="js/complog.js"></script>
   </head>
   <body>
-    <a-scene >
+    <a-scene vrlog>
       <a-assets>
         <img
           id="groundTexture"
@@ -37,11 +38,10 @@
       ></a-sky>
 
       <!-- The Player rig. -->
+      <!-- gamepad-controls="controller:1"-->
       <a-entity
         id="cameraRig"
-        
         movement-controls
-        gamepad-controls="controller:1"
         rotate-player="hand:#right-hand"
       >
         <a-camera id="head" camera wasd-controls></a-camera>
