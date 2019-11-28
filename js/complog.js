@@ -1,6 +1,11 @@
 AFRAME.registerComponent("vrlog", {
   init: function(){
-    console.log(this.el);
+    
+    var fooComponent = document.querySelector('[gamepad-controls]').components.(gamepad-controls);
+console.log(fooComponent);
+//fooComponent.qux();
+    
+    console.log(this.el.querySelector('#cameraRig'));
     var el = this.el; // Reference to the component's entity.
     
     AFRAME.log("Look at your controllers");
