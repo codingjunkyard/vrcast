@@ -1,4 +1,10 @@
 AFRAME.registerComponent("rotate-player", {
+  schema:
+  
+  gamepad-controls="controller: 1"
+  
+  
+  
   update: function() {
     //var y = this.el.getAttribute("rotation").y;
     //console.log(this.el.querySelector('#right-hand'));
