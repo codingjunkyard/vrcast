@@ -1,12 +1,9 @@
 AFRAME.registerComponent("rotate-player", {
    schema: {
-    hand: {type: 'string', default: '#right-hand'}
+    hand: {default: '#right-hand', oneOf: ['#right-hand', '#left-hand']}
   },
-  
   //gamepad-controls="controller: 1"
-  
-  
-  
+
   update: function() {
     var data = this.data;
     var playerGetter = document.querySelector("#cameraRig");
@@ -16,6 +13,12 @@ AFRAME.registerComponent("rotate-player", {
     console.log(playerAffector);
     console.log(y);
 
+    if (data.hand=='#right-hand'){
+     //gamepad-controls="controller: 1"
+    }
+    
+    
+    
     playerAffector.addEventListener("axismove", function(evt1) {
       AFRAME.log(evt1.detail.axis);
       if (evt1.detail.axis[0] > 0.7) {
