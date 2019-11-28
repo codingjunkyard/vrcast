@@ -1,7 +1,7 @@
 AFRAME.registerComponent("rotate-player", {
   
   update: function() {
-   
+   console.log(this);
   var y=this.el.getAttribute('rotation').y;
   //var playerAffector=this.el
 
