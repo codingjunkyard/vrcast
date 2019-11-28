@@ -9,7 +9,7 @@
     <script src="js/control-log.js"></script>
   </head>
   <body>
-    <a-scene vrlog>
+    <a-scene >
       <a-assets>
         <img
           id="groundTexture"
@@ -52,7 +52,7 @@
             rotation="-90 0 0"
           ></a-entity>
         </a-entity>
-        <a-entity id="right-hand" oculus-touch-controls="hand:right">
+        <a-entity id="right-hand" oculus-touch-controls="hand:right" control-log>
           <a-entity
             text="anchor: left; xOffset:.1; value: a to rotate right \n b to rotate left"
             rotation="-90 0 0"

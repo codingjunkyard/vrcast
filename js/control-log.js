@@ -1,9 +1,9 @@
-FRAME.registerComponent("control-log", {
+AFRAME.registerComponent("control-log", {
   
   init: function() {
     console.log(this);
-    AFRAME.log("message from control log", "messagez");
-    AFRAME.log(this, "messagez");
+    AFRAME.log("message from control log");
+    AFRAME.log(this);
   },
 
   update: function() {

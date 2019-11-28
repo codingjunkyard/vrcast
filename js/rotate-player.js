@@ -18,7 +18,7 @@ AFRAME.registerComponent("rotate-player", {
       }
     });
     
-    this.el.addEventListener("bbuttondown", function(evt1) {
+    this.el.addEventListener("bbuttondown", function(evt2) {
            this.setAttribute("rotation", { x: 0, y: y+=10, z: 0 });
       if(y==-360){
         y=0;
