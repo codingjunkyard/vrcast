@@ -6,7 +6,7 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.controls.min.js"></script>
     <script src="js/complog.js"></script>
     <script src="js/rotate-player.js"></script>
-    <script src="js/handlog.js"></script>
+    <script src="js/control-log.js"></script>
   </head>
   <body>
     <a-scene vrlog>
@@ -52,7 +52,7 @@
             rotation="-90 0 0"
           ></a-entity>
         </a-entity>
-        <a-entity id="right-hand" oculus-touch-controls="hand:right" control-log>
+        <a-entity id="right-hand" oculus-touch-controls="hand:right">
           <a-entity
             text="anchor: left; xOffset:.1; value: a to rotate right \n b to rotate left"
             rotation="-90 0 0"
