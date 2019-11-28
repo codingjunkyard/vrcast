@@ -1,15 +1,16 @@
 AFRAME.registerComponent("rotate-player", {
-  schema:
+   schema: {
+    hand: {type: 'string', default: '#right-hand'}
+  },
   
-  gamepad-controls="controller: 1"
+  //gamepad-controls="controller: 1"
   
   
   
   update: function() {
-    //var y = this.el.getAttribute("rotation").y;
-    //console.log(this.el.querySelector('#right-hand'));
+    var data = this.data;
     var playerGetter = document.querySelector("#cameraRig");
-    var playerAffector = this.el.querySelector("#right-hand");
+    var playerAffector = this.el.querySelector(data.hand);
     var y = playerGetter.getAttribute("rotation").y;
     console.log(playerGetter);
     console.log(playerAffector);
