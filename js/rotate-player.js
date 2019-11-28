@@ -4,7 +4,10 @@ AFRAME.registerComponent("rotate-player", {
   },
   //gamepad-controls="controller: 1"
   init: function() {
-    console.log(Gamepad.id);
+    var gp = navigator.getGamepads();
+    console.log(gp);
+    AFRAME.log(gp);
+    //AFRAME.log(navigator.getGamepads().id);
   },
 
   update: function() {
@@ -22,6 +25,7 @@ AFRAME.registerComponent("rotate-player", {
 
     playerAffector.addEventListener("axismove", function(evt1) {
       AFRAME.log(evt1.detail.axis);
+      AFRAME.log(navigator.getGamepads().id);
       if (evt1.detail.axis[0] > 0.7) {
         playerGetter.setAttribute("rotation", { x: 0, y: (y -= 10), z: 0 });
         if (y == 360) {
