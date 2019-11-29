@@ -12,6 +12,7 @@ console.log(fooComponent);
     
     AFRAME.log("Look at your controllers");
     AFRAME.log(el.querySelector('#cameraRig').getAttribute('rotation'));
+    
         
   },
   update: function() {
