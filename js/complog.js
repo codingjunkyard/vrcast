@@ -3,7 +3,7 @@ const COMPONENT_SUFFIX = '-controls';
 AFRAME.registerComponent("vrlog", {
   init: function(){
     
-    var fooComponent = document.querySelector('[gamepad-controls]');
+    var fooComponent = this.el.querySelector('[gamepad-controls]');
 console.log(fooComponent);
 //fooComponent.qux();
     
