@@ -35,4 +35,4 @@ console.log(fooComponent);
     });
     
   },
-})
+});
