@@ -60,10 +60,11 @@
         <a-entity
           id="right-hand"
           laser-controls=""
-          raycaster="far: 2"
+          raycaster="far: 3"
           oculus-touch-controls="hand:right"
         >
           <a-entity
+            id="handText"
             text="anchor: left; xOffset:.1; value: use thumbstick \n to rotate R or L"
             rotation="-90 0 0"
           ></a-entity>
@@ -76,7 +77,7 @@
         geometry="primitive: plane; height: auto; width: auto"
         event-set__mouseenter="material.color: blue"
         event-set__mouseleave="material.color: black"
-        event-set__click="material.color: red"
+        event-set__click="material.color: red;_target:#handText"
         position="1.25 1.6 -1.5"
         material="color: black"
         text="align: center; width: 1; value: Click here to combine or separate\nmovement controls."
