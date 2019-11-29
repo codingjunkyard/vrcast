@@ -4,8 +4,9 @@ AFRAME.registerComponent("rotate-player", {
   },
   //gamepad-controls="controller: 1"
   init: function() {
-    AFRAME.log(navigator.getGamepads()[0].id);
-    AFRAME.log(navigator.getGamepads()[1].id);
+    var gp = navigator.getGamepads();
+    AFRAME.log(gp);
+    //AFRAME.log(navigator.getGamepads().id);
   },
 
   update: function() {
@@ -16,14 +17,15 @@ AFRAME.registerComponent("rotate-player", {
     /*console.log(playerGetter);
     console.log(playerAffector);
     console.log(y);*/
-
+   // AFRAME.log(navigator.getGamepads()[0].id);
+   // AFRAME.log(navigator.getGamepads()[1].id);
     if (data.hand == "#right-hand") {
       //gamepad-controls="controller: 1"
     }
 
     playerAffector.addEventListener("axismove", function(evt1) {
-      AFRAME.log(evt1.detail.axis);
-      
+      //AFRAME.log(evt1.detail.axis);
+
       if (evt1.detail.axis[0] > 0.7) {
         playerGetter.setAttribute("rotation", { x: 0, y: (y -= 10), z: 0 });
         if (y == 360) {
