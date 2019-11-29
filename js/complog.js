@@ -6,12 +6,12 @@ AFRAME.registerComponent("vrlog", {
 
     AFRAME.log(
       "Hello DEVUSOL Team!\nuse the controllers to manuver yourself around.\nTRY" +
-        "ALL OF THE BUTTONS!!!\nleft thumbstick should move\n right thumbstick should" +
+        "ALL OF THE BUTTONS!!!\nleft thumbstick should move\n right thumbstick should " +
         "rotate.\nIf not, let me know what they are doing.\nright trigger should teleport" +
-        "the goal is to discover the most\n intuitive setup for new users to navigate" +
+        " the goal is to discover the most\n intuitive setup for new users to navigate" +
         "the vr space using quest controllers. Keep in mind they might be virtual hands" +
         "or shooters, so trigger might not be the best button to use for teleporting." +
-        "let me know what you think guys"
+        "We can also adjust movement and rotation speeds as well. Let me know what you guys think."
     );
     // AFRAME.log(el.querySelector('#cameraRig').getAttribute('rotation'));
   },

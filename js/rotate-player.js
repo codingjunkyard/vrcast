@@ -32,6 +32,8 @@ AFRAME.registerComponent("rotate-player", {
         if (y == 360) {
           y = 0;
         }
+        AFRAME.log(y);
+
       }
     });
 
@@ -41,6 +43,7 @@ AFRAME.registerComponent("rotate-player", {
         if (y == -360) {
           y = 0;
         }
+        AFRAME.log(y);
       }
     });
   }
