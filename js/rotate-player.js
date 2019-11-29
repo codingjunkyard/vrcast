@@ -1,6 +1,6 @@
 AFRAME.registerComponent("rotate-player", {
   schema: {
-    hand: { default: "#right-hand", oneOf: ["#right-hand", "#left-hand"] }
+    hand: { default: "#right-hand", oneOf: ["#right-hand", "#left-hand",'combined'] }
   },
   update: function() {
     var data = this.data;

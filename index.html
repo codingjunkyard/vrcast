@@ -5,6 +5,7 @@
     <script src="https://unpkg.com/aframe-log-component/dist/aframe-log-component.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.controls.min.js"></script>
     <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
     <script src="js/rotate-player.js"></script>
     <script src="js/complog.js"></script>
   </head>
@@ -73,6 +74,9 @@
       <a-log position="0 1.6 -1.5"></a-log>
       <a-entity
         geometry="primitive: plane; height: auto; width: auto"
+        event-set__mouseenter="material.color: blue"
+        event-set__mouseleave="material.color: black"
+        event-set__click="material.color: red"
         position="1.25 1.6 -1.5"
         material="color: black"
         text="align: center; width: 1; value: Click here to combine or separate\nmovement controls."
