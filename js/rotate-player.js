@@ -6,18 +6,20 @@ AFRAME.registerComponent("rotate-player", {
 
   update: function() {
     var data = this.data;
+    var controlinfo = this.el.sceneEl; //figure how to get the navigator.gamepads().id to work 
     var playerGetter = document.querySelector("#cameraRig");
     var playerAffector = this.el.querySelector(data.hand);
     var y = playerGetter.getAttribute("rotation").y;
     
         
-    if (data.hand == "#right-hand") {
+    if (data.hand == "#right-hand" ) {
       playerGetter.setAttribute("gamepad-controls", { controller: 0 });
     } else {
       playerGetter.setAttribute("gamepad-controls", { controller: 1 });
     }
     
-    console.log(playerGetter);
+        console.log(controlinfo);
+    //console.log(playerGetter);
     //console.log(playerAffector);
     //console.log(y);
     //AFRAME.log(controllerArray);
