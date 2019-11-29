@@ -3,23 +3,25 @@ AFRAME.registerComponent("rotate-player", {
     hand: { default: "#right-hand", oneOf: ["#right-hand", "#left-hand"] }
   },
   //gamepad-controls="controller: 1"
-  
+
   update: function() {
     var data = this.data;
     var playerGetter = document.querySelector("#cameraRig");
     var playerAffector = this.el.querySelector(data.hand);
     var y = playerGetter.getAttribute("rotation").y;
-    if(data.hand == "#right-hand"){
-    playerGetter.setAttribute("gamepad-controls",{controller:1});
-    }else {
-      
+    
+        
+    if (data.hand == "#right-hand") {
+      playerGetter.setAttribute("gamepad-controls", { controller: 0 });
+    } else {
+      playerGetter.setAttribute("gamepad-controls", { controller: 1 });
     }
+    
     console.log(playerGetter);
     //console.log(playerAffector);
-    console.log(y);
-   //AFRAME.log(controllerArray);
-    
-  
+    //console.log(y);
+    //AFRAME.log(controllerArray);
+
     playerAffector.addEventListener("axismove", function(evt1) {
       //AFRAME.log(evt1.detail.axis);
 
