@@ -1,5 +1,5 @@
 AFRAME.registerComponent("parse-controller", {
-  dependencies: ['rotate-player'],
+  dependencies: ['controllerconnected'],
   
   init: function(e) {
     var gp = navigator.getGamepads()[0];
