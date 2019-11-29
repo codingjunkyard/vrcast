@@ -1,6 +1,6 @@
 AFRAME.registerComponent("rotate-player", {
   schema: {
-    hand: { default: "#right-hand", oneOf: ["#right-hand", "#left-hand",'combined'] }
+    hand: { default: "#right-hand", oneOf: ["#right-hand", "#left-hand",'combine'] }
   },
   update: function() {
     var data = this.data;
@@ -11,7 +11,11 @@ AFRAME.registerComponent("rotate-player", {
 
     if (data.hand == "#right-hand") {
       playerGetter.setAttribute("gamepad-controls", { controller: 0 });
-    } else {
+    } else if (data.hand == "combine"){
+      data.setAttribute("hand", "#right-hand");
+      playerGetter.setAttribute("gamepad-controls", { controller: 1 });
+    }
+    else{
       playerGetter.setAttribute("gamepad-controls", { controller: 1 });
     }
 
