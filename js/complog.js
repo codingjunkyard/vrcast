@@ -1,5 +1,3 @@
-const COMPONENT_SUFFIX = "-controls";
-
 AFRAME.registerComponent("vrlog", {
   init: function() {
     console.log(this.el.querySelector("#cameraRig"));

@@ -8,6 +8,7 @@
     <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
     <script src="js/rotate-player.js"></script>
     <script src="js/complog.js"></script>
+    <script src="js/change-controls.js"></script>
   </head>
   <body>
     <a-scene stats vrlog>
@@ -74,13 +75,11 @@
       <!-- The VR Console. -->
       <a-log position="0 1.6 -1.5"></a-log>
       <a-entity
-        geometry="primitive: plane; height: auto; width: auto"
-        event-set__mouseenter="material.color: blue"
-        event-set__mouseleave="material.color: black"
-        foo
+        geometry="primitive: plane; height: auto; width: auto"  
         position="1.25 1.6 -1.5"
         material="color: black"
         text="align: center; width: 1; value: Click here to combine or separate\nmovement controls."
+        change-controls
       ></a-entity>
     </a-scene>
   </body>
