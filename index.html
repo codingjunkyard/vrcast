@@ -75,11 +75,10 @@
         material="color: black"
         text="align: center; width: 1; value: Click here to combine or separate\nmovement controls."
         event-set__mouseenter="material.color: blue"
-        event-set__mouseleave="material.color: black"
-        event-set__click="_event: click; _target: #cylinderText; visible: false">
-      <a-text id="cylinderText" value="This is a cylinder" align="center" color="#FFF" visible="false" position="0 -0.55 0.55"
-              geometry="primitive: plane; width: 1.75" material="color: #333"></a-text>
-      ></a-entity>
+        event-set__mouseleave="material.color: black; _target: #cylinderText; visible: false"
+        event-set__click="_event: click; _target: #cylinderText; visible: true">
+      <a-text id="cylinderText" value="This does nothing yet.\nWork in Progress" align="center" color="#FFF" visible="false" position="0 -0.55 0.55"></a-text>
+      </a-entity>
     </a-scene>
   </body>
 </html>
