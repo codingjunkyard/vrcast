@@ -59,6 +59,7 @@
         <a-entity
           id="right-hand"
           laser-controls=""
+          raycaster="far: 2"
           oculus-touch-controls="hand:right"
         >
           <a-entity
@@ -70,14 +71,12 @@
 
       <!-- The VR Console. -->
       <a-log position="0 1.6 -1.5"></a-log>
-      <a-plane
-        position="1 1.6 -1.5"
-        scale="0.5 0.5 0.5"
-        material="color:  #000000"
-        text="align:center; value:Click here to combine \nor separate movement controls"
-      >
-        
-      </a-plane>
+      <a-entity
+        geometry="primitive: plane; height: auto; width: auto"
+        position="1.25 1.6 -1.5"
+        material="color: black"
+        text="align: center; width: 1; value: Click here to combine or separate\nmovement controls."
+      ></a-entity>
     </a-scene>
   </body>
 </html>
