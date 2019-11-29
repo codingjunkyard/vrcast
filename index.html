@@ -4,7 +4,7 @@
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-log-component/dist/aframe-log-component.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.controls.min.js"></script>
-    <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
+    <script src="aframe-teleport-controls.js"></script>
     <script src="js/rotate-player.js"></script>
     <script src="js/complog.js"></script>
     <script src="js/parseController.js"></script>
@@ -45,6 +45,7 @@
         id="cameraRig"
         movement-controls
         rotate-player="hand:#right-hand"
+                
       >
         <a-camera id="head" camera wasd-controls></a-camera>
         <a-entity id="left-hand" oculus-touch-controls="hand:left">
@@ -56,7 +57,7 @@
         <a-entity
           id="right-hand"
           oculus-touch-controls="hand:right"
-          teleport-controls
+          teleport-controls="button:trigger"
         >
           <a-entity
             text="anchor: left; xOffset:.1; value: use thumbstick \n to rotate R or L"
