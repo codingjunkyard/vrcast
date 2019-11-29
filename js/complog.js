@@ -25,13 +25,19 @@ AFRAME.registerComponent("vrlog", {
       AFRAME.log("aButton Pressed");
     });
     el.addEventListener("bbuttondown", function(evt1) {
-            AFRAME.log("bButton Pressed");
+      AFRAME.log("bButton Pressed");
     });
-     el.addEventListener("ybuttondown", function(evt1) {
-            AFRAME.log("yButton Pressed");
+    el.addEventListener("ybuttondown", function(evt1) {
+      AFRAME.log("yButton Pressed");
     });
-     el.addEventListener("bbuttondown", function(evt1) {
-            AFRAME.log("bButton Pressed");
+    el.addEventListener("gripdown", function(evt1) {
+      AFRAME.log("gripButton Pressed");
+    });
+    el.addEventListener("triggerdown", function(evt1) {
+      AFRAME.log("trigerButton Pressed");
+    });
+    el.addEventListener("thumbstickdown", function(evt1) {
+      AFRAME.log("thumbstickButton Pressed");
     });
   }
 });

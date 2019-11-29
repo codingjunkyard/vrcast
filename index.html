@@ -46,7 +46,11 @@
         rotate-player="hand:#right-hand"
       >
         <a-camera id="head" camera wasd-controls></a-camera>
-        <a-entity id="left-hand" oculus-touch-controls="hand:left">
+        <a-entity
+          id="left-hand"
+          oculus-touch-controls="hand:left"
+          teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger"
+        >
           <a-entity
             text="value: use thumbstick to move;xOffset:-.1"
             rotation="-90 0 0"
@@ -54,8 +58,8 @@
         </a-entity>
         <a-entity
           id="right-hand"
+          laser-controls=""
           oculus-touch-controls="hand:right"
-          teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger"
         >
           <a-entity
             text="anchor: left; xOffset:.1; value: use thumbstick \n to rotate R or L"
