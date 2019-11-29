@@ -2,7 +2,7 @@ const COMPONENT_SUFFIX = '-controls';
 
 AFRAME.registerComponent("vrlog", {
   init: function(){
-    
+    //var contollerArray = navigator.getGamepads()[0].id;
     var fooComponent = this.el.querySelector('[gamepad-controls]');
 console.log(fooComponent);
 //fooComponent.qux();
@@ -12,6 +12,7 @@ console.log(fooComponent);
     
     AFRAME.log("Look at your controllers");
     AFRAME.log(el.querySelector('#cameraRig').getAttribute('rotation'));
+    //AFRAME.log(controllerArray);
     
         
   },

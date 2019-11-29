@@ -14,10 +14,11 @@ AFRAME.registerComponent("rotate-player", {
     var playerGetter = document.querySelector("#cameraRig");
     var playerAffector = this.el.querySelector(data.hand);
     var y = playerGetter.getAttribute("rotation").y;
+    
     /*console.log(playerGetter);
     console.log(playerAffector);
     console.log(y);*/
-   // AFRAME.log(navigator.getGamepads()[0].id);
+   //AFRAME.log(controllerArray);
    // AFRAME.log(navigator.getGamepads()[1].id);
     if (data.hand == "#right-hand") {
       //gamepad-controls="controller: 1"
