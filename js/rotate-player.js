@@ -26,13 +26,13 @@ AFRAME.registerComponent("rotate-player", {
 
     playerAffector.addEventListener("axismove", function(evt1) {
       //AFRAME.log(evt1.detail.axis);
-
+  AFRAME.log(y);
       if (evt1.detail.axis[0] > 0.7) {
         playerGetter.setAttribute("rotation", { x: 0, y: (y -= 10), z: 0 });
         if (y == 360) {
-          y = 0;
+          y=0;
         }
-        AFRAME.log(y);
+      
 
       }
     });
@@ -43,7 +43,7 @@ AFRAME.registerComponent("rotate-player", {
         if (y == -360) {
           y = 0;
         }
-        AFRAME.log(y);
+        //AFRAME.log(y);
       }
     });
   }
