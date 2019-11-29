@@ -1,26 +1,26 @@
 AFRAME.registerComponent("rotate-player", {
   schema: {
-    hand: { default: "right", oneOf: ["right", "#left-hand",'combine'] }
+    hand: { default: "right", oneOf: ["right", "left","combine"] }
   },
   update: function() {
     var data = this.data;
-    var handSelect = data.hand
+    var handSelect = "#"+data.hand+"-hand";
     //var controlinfo = this.el.sceneEl; //figure how to get the navigator.gamepads().id to work
     var playerGetter = document.querySelector("#cameraRig");
     var playerAffector = this.el.querySelector(handSelect);
     var y = playerGetter.getAttribute("rotation").y;
     
     if (data.hand == "right") {
-      data.hand = "#right-hand";
       playerGetter.setAttribute("gamepad-controls", { controller: 0 });
-    } else if (data.hand == "combine"){
-      data.setAttribute("hand", "#right-hand");
+    } else if (data.hand == "left"){
       playerGetter.setAttribute("gamepad-controls", { controller: 1 });
     }
     else{
+      this.el.querySelector("#right-hand");
       playerGetter.setAttribute("gamepad-controls", { controller: 1 });
     }
-
+    
+    console.log(handSelect);
     //console.log(controlinfo);
     //console.log(playerGetter);
     //console.log(playerAffector);
