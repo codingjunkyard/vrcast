@@ -1,18 +1,19 @@
-const COMPONENT_SUFFIX = '-controls';
+const COMPONENT_SUFFIX = "-controls";
 
 AFRAME.registerComponent("vrlog", {
-  init: function(){
-        
-    console.log(this.el.querySelector('#cameraRig'));
-        
-    AFRAME.log("Hello From vrlog");
-   // AFRAME.log(el.querySelector('#cameraRig').getAttribute('rotation'));
-       
-        
+  init: function() {
+    console.log(this.el.querySelector("#cameraRig"));
+
+    AFRAME.log(
+      "Hello DEVUSOL Team!\nuse the controllers to manuver yourself around.\nTRY" +
+        "ALL OF THE BUTTONS!!!\nleft thumbstick should move\n right thumbstick should" +
+        "rotate.\nIf not, let me know what they are doing.\nright trigger should teleport" +
+        "the goal is to discover the most\n intuitive setup for new users to navigate" +
+        "the vr space using quest controllers. Keep in mind they might be virtual hands" +
+        "or shooters, so trigger might not be the best button to use for teleporting." +
+        "let me know what you think guys"
+    );
+    // AFRAME.log(el.querySelector('#cameraRig').getAttribute('rotation'));
   },
-  update: function() {
-     
-    
-    
-  },
+  update: function() {}
 });
