@@ -16,7 +16,7 @@ AFRAME.registerComponent("rotate-player", {
       playerGetter.setAttribute("gamepad-controls", { controller: 1 });
     }
     else{
-      this.el.querySelector("#right-hand");
+      playerAffector=this.el.querySelector("#right-hand");
       playerGetter.setAttribute("gamepad-controls", { controller: 1 });
     }
     
@@ -29,7 +29,7 @@ AFRAME.registerComponent("rotate-player", {
     playerAffector.addEventListener("axismove", function(evt1) {
       //AFRAME.log(evt1.detail.axis);
 
-      if (evt1.detail.axis[0] > 0.7) {
+      if (evt1.detail.axis[0] > 0.9) {
         playerGetter.setAttribute("rotation", { x: 0, y: (y -= 10), z: 0 });
         if (y == 360) {
           y = 0;
@@ -38,7 +38,7 @@ AFRAME.registerComponent("rotate-player", {
     });
 
     playerAffector.addEventListener("axismove", function(evt2) {
-      if (evt2.detail.axis[0] < -0.7) {
+      if (evt2.detail.axis[0] < -0.9) {
         playerGetter.setAttribute("rotation", { x: 0, y: (y += 10), z: 0 });
         if (y == -360) {
           y = 0;
