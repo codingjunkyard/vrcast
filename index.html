@@ -46,7 +46,7 @@
         movement-controls
         rotate-player="hand:right"
       >
-        <a-camera id="head" camera wasd-controls></a-camera>
+        <a-camera id="head" camera></a-camera>
         <a-entity
           id="left-hand"
           oculus-touch-controls="hand:left"
@@ -77,7 +77,7 @@
         geometry="primitive: plane; height: auto; width: auto"
         event-set__mouseenter="material.color: blue"
         event-set__mouseleave="material.color: black"
-        event-set__click="material.color: red;_target:#handText"
+        event-set__click="_target: #cameraRig; rotation: 0 0 0"
         position="1.25 1.6 -1.5"
         material="color: black"
         text="align: center; width: 1; value: Click here to combine or separate\nmovement controls."
