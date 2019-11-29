@@ -74,10 +74,21 @@
         position="1.25 1.6 -1.5"
         material="color: black"
         text="align: center; width: 1; value: Click here to combine or separate\nmovement controls."
-        event-set__mouseenter="material.color: blue"
-        event-set__mouseleave="material.color: black; _target: #cylinderText; visible: false"
-        event-set__click="_event: click; _target: #cylinderText; visible: true">
-      <a-text id="cylinderText" value="This does nothing yet.\nWork in Progress" align="center" color="#FFF" visible="false" position="0 -0.55 0.55"></a-text>
+        event-set__enter1="_event:mouseenter;material.color: blue"
+        event-set__leave1="_event:mouseleave;material.color: black" 
+        event-set__leave2="_event:mouseleave;_target: #nothingText; visible: false"
+        event-set__click="_event: click; _target: #nothingText; visible: true"
+      >
+        <a-text
+          id="nothingText"
+          value="This button does nothing yet.\nIt's a Work in Progress"
+          align="center"
+          rotation="0 -30 0"
+          color="#FFF"
+          visible="false"
+          position="0 -0.55 0.55"
+          scale=".5 .5 .5"
+        ></a-text>
       </a-entity>
     </a-scene>
   </body>
