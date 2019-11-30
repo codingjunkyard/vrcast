@@ -1,4 +1,4 @@
-AFRAME.registerComponent("rotate-player", {
+AFRAME.registerComponent("rotateplayer", {
   schema: {
     hand: { default: "right", oneOf: ["right", "left","combine"] }
   },
