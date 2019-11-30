@@ -20,7 +20,7 @@ AFRAME.registerComponent("rotate-player", {
       playerGetter.setAttribute("gamepad-controls", { controller: 1 });
     }
     
-    AFRAME.log(handSelect);
+    console.log(playerAffector);
     //console.log(controlinfo);
     //console.log(playerGetter);
     //console.log(playerAffector);
