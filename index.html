@@ -75,21 +75,23 @@
         material="color: black"
         text="align: center; width: 1; value: Click here to combine or separate\nmovement controls."
         event-set__enter1="_event:mouseenter;material.color: blue"
-        event-set__leave1="_event:mouseleave;material.color: black" 
+        event-set__leave1="_event:mouseleave;material.color: black"
         event-set__leave2="_event:mouseleave;_target: #nothingText; visible: false"
-        event-set__click="_event: click; _target: #cameraRig; rotateplayer.hand:left"
+        event-set__click1="_event: click; _target: #cameraRig; rotateplayer.hand:left"
+        event-set__click2="_event: click; _target: #nothingText; value: rotation is now on 
+                           left thumbstick\n movement on right thumbstick; visible:true"
       >
-        <a-text
-          id="nothingText"
-          value="This button does nothing yet.\nIt's a Work in Progress"
-          align="center"
-          rotation="0 -30 0"
-          color="#FFF"
-          visible="false"
-          position="0 -0.55 0.55"
-          scale=".5 .5 .5"
-        ></a-text>
       </a-entity>
+      <a-text
+        id="controlText"
+        value="This button does nothing yet.\nIt's a Work in Progress"
+        align="center"
+        rotation="0 -30 0"
+        color="#FFF"
+        visible="false"
+        position="1.25 1.5 -1.5"
+        scale=".5 .5 .5"
+      ></a-text>
     </a-scene>
   </body>
 </html>
