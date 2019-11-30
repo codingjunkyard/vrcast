@@ -73,15 +73,38 @@
         geometry="primitive: plane; height: auto; width: auto"
         position="1.25 1.6 -1.5"
         material="color: black"
-        text="align: center; width: 1; value: Click here to combine or separate\nmovement controls."
+        text="align: center; width: 1; value: Click here to move the rotation\n controls to left thumbstick ."
         event-set__enter1="_event:mouseenter;material.color: blue"
         event-set__leave1="_event:mouseleave;material.color: black"
-        event-set__leave2="_event:mouseleave;_target: #nothingText; visible: false"
+        event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
         event-set__click1="_event: click; _target: #cameraRig; rotateplayer.hand:left"
-        event-set__click2="_event: click; _target: #nothingText; value: rotation is now on 
-                           left thumbstick\n movement on right thumbstick; visible:true"
-      >
-      </a-entity>
+        event-set__click2="_event: click; _target: #controlText; value: rotation is now on 
+                           LEFT thumbstick and movement on RIGHT thumbstick; visible:true"
+      ></a-entity>
+      <a-entity
+        geometry="primitive: plane; height: auto; width: auto"
+        position="1.25 1.4 -1.5"
+        material="color: black"
+        text="align: center; width: 1; value: Click here to combine rotation and movement\ncontrols to right thumbstick."
+        event-set__enter1="_event:mouseenter;material.color: blue"
+        event-set__leave1="_event:mouseleave;material.color: black"
+        event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
+        event-set__click1="_event: click; _target: #cameraRig; rotateplayer.hand:combine"
+        event-set__click2="_event: click; _target: #controlText; value: rotation is now on 
+                           movement and rotation now on RIGHT thumbstick; visible:true"
+      ></a-entity>
+      <a-entity
+        geometry="primitive: plane; height: auto; width: auto"
+        position="1.25 1.2 -1.5"
+        material="color: black"
+        text="align: center; width: 1; value: Click here to move the rotation\n controls to right thumbstick ."
+        event-set__enter1="_event:mouseenter;material.color: blue"
+        event-set__leave1="_event:mouseleave;material.color: black"
+        event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
+        event-set__click1="_event: click; _target: #cameraRig; rotateplayer.hand:right"
+        event-set__click2="_event: click; _target: #controlText; value: rotation is now on 
+                           RIGHT thumbstick and movement on LEFT thumbstick; visible:true"
+      ></a-entity>
       <a-text
         id="controlText"
         value="This button does nothing yet.\nIt's a Work in Progress"
@@ -89,8 +112,8 @@
         rotation="0 -30 0"
         color="#FFF"
         visible="false"
-        position="1.25 1.5 -1.5"
-        scale=".5 .5 .5"
+        position="1.25 1 -1.5"
+        scale=".25 .25 .25"
       ></a-text>
     </a-scene>
   </body>
