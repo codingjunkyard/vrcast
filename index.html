@@ -57,7 +57,7 @@
           id="right-hand"
           laser-controls=""
           raycaster="far: 3"
-          oculus-touch-controls="hand:right"
+          oculus-touch-controls
         >
           <a-entity
             id="handText"
@@ -73,7 +73,7 @@
         geometry="primitive: plane; height: auto; width: auto"
         position="1.25 1.6 -1.5"
         material="color: black"
-        text="align: center; width: 1; value: Click here to move the rotation\n controls to left thumbstick ."
+        text="align: center; width: 1; value: Click here to move the ROTATION\n controls to LEFT thumbstick ."
         event-set__enter1="_event:mouseenter;material.color: blue"
         event-set__leave1="_event:mouseleave;material.color: black"
         event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
@@ -83,9 +83,9 @@
       ></a-entity>
       <a-entity
         geometry="primitive: plane; height: auto; width: auto"
-        position="1.25 1.4 -1.5"
+        position="1.25 1.2 -1.5"
         material="color: black"
-        text="align: center; width: 1; value: Click here to combine rotation and movement\ncontrols to right thumbstick."
+        text="align: center; width: 1; value: Click here to COMBINE ROTATION and MOVEMENT\ncontrols to RIGHT thumbstick."
         event-set__enter1="_event:mouseenter;material.color: blue"
         event-set__leave1="_event:mouseleave;material.color: black"
         event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
@@ -95,9 +95,9 @@
       ></a-entity>
       <a-entity
         geometry="primitive: plane; height: auto; width: auto"
-        position="1.25 1.2 -1.5"
+        position="1.25 0.8 -1.5"
         material="color: black"
-        text="align: center; width: 1; value: Click here to move the rotation\n controls to right thumbstick ."
+        text="align: center; width: 1; value: Click here to move the ROTATION\n controls to RIGHT thumbstick ."
         event-set__enter1="_event:mouseenter;material.color: blue"
         event-set__leave1="_event:mouseleave;material.color: black"
         event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
@@ -109,10 +109,9 @@
         id="controlText"
         value="This button does nothing yet.\nIt's a Work in Progress"
         align="center"
-        rotation="0 -30 0"
         color="#FFF"
         visible="false"
-        position="1.25 1 -1.5"
+        position="1.25 0.6 -1.5"
         scale=".25 .25 .25"
       ></a-text>
     </a-scene>
