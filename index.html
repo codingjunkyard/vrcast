@@ -21,7 +21,11 @@
         ></a-asset-items>
         <img />
         <video></video>
-        <audio></audio>
+        <audio
+          id="alien"
+          src="https://cdn.glitch.com/bcd20947-b0a2-41ba-9449-90fc5e417806%2FAlien_Song.mp3?v=15752412516903"
+          preload="auto"
+        ></audio>
         <a-mixin
           id="interaction"
           physics-collider
@@ -39,6 +43,7 @@
 
       <!--START HERE -->
       <a-entity id="environment" environment="preset: starry"></a-entity>
+      <a-entity sound="src: #alien" autoplay="true" volume ="1"></a-entity>
 
       <!-- The Player rig. -->
       <a-entity id="cameraRig" movement-controls rotateplayer="hand:combine">
@@ -71,7 +76,11 @@
       <a-log position="-1.5 1.6 -1.25" rotation="0 45 0"></a-log>
 
       <!--Interactive planes-->
-      <a-entity layout="type: box; margin: 0.06" position="0.8 1 -0.6" rotation="0 -30 0">
+      <a-entity
+        layout="type: box; margin: 0.06"
+        position="0.8 1 -0.6"
+        rotation="0 -30 0"
+      >
         <a-entity
           geometry="primitive: plane; height: auto; width: 0.5"
           material="color: black"
@@ -122,7 +131,7 @@
           event-set__click1="_event: click; _target: #environment; environment.preset:forest"
           event-set__click2="_event: click; _target: #controlText; value: environment set to forest; visible:true"
         ></a-entity>
-         <a-entity
+        <a-entity
           geometry="primitive: plane; height: auto; width: 0.5"
           material="color: black"
           text="align: center; width: 1; value: egypt"
@@ -143,7 +152,7 @@
         >
         </a-text>
       </a-entity>
-      
+
       <!--the GLTF model to import-->
       <a-gltf-model
         src="#GLTF"
@@ -151,9 +160,6 @@
         scale=""
         rotation=""
       ></a-gltf-model>
-      
-      
-      
     </a-scene>
   </body>
 </html>
