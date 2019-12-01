@@ -7,7 +7,7 @@
     <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
-     <script src="https://unpkg.com/aframe-layout-component@4.1.0/dist/aframe-layout-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component@4.1.0/dist/aframe-layout-component.min.js"></script>
     <script src="js/rotate-player.js"></script>
     <script src="js/complog.js"></script>
   </head>
@@ -38,7 +38,7 @@
       </a-assets>
 
       <!--START HERE -->
-      <a-entity id= "environment" environment="preset: starry"></a-entity>
+      <a-entity id="environment" environment="preset: starry"></a-entity>
 
       <!-- The Player rig. -->
       <!-- gamepad-controls="controller:1"-->
@@ -72,27 +72,78 @@
       <a-log position="0 1.6 -1.5"></a-log>
 
       <!--Interactive planes-->
-      
-            
-     <a-entity layout="type: box; margin: 0.1" position="1.2 1.6 -1.5">
-        <a-entity geometry="primitive: plane; height: auto; width: 0.5" material="color: black" text="align: center; width: 1; value: volcano" event-set__enter1="[object Object]" event-set__leave1="[object Object]" event-set__leave2="[object Object]" event-set__click1="[object Object]" event-set__click2="[object Object]" position=""></a-entity>
-        <a-entity geometry="primitive: plane; height: 0.04616210413311862; width: 0.5" material="color: black" text="align: center; width: 1; value: starry" event-set__enter1="[object Object]" event-set__leave1="[object Object]" event-set__leave2="[object Object]" event-set__click1="[object Object]" event-set__click2="[object Object]" position="0 0.1 0"></a-entity>
-        <a-entity geometry="primitive: plane; height: 0.092" material="color: black" text="align: center; width: 1; value: Click here to move the ROTATION\n controls to RIGHT thumbstick ." event-set__enter1="[object Object]" event-set__leave1="[object Object]" event-set__leave2="[object Object]" event-set__click1="[object Object]" event-set__click2="[object Object]" position="0 0.2 0"></a-entity>
-      
-      
-      <a-text id="controlText" value="This button does nothing yet.\nIt's a Work in Progress" align="center" color="#FFF" visible="false" position="0 0.30000000000000004 0" scale="0.25 0.25 0.25" text=""></a-text>
-    </a-entity>
-      
-      
-      <a-text
-        id="controlText"
-        value="This button does nothing yet.\nIt's a Work in Progress"
-        align="center"
-        color="#FFF"
-        visible="false"
-        position="1.25 0.6 -1.5"
-        scale=".25 .25 .25"
-      ></a-text>
+      <a-entity layout="type: box; margin: 0.06" position="1 1.6 -1.5">
+        <a-entity
+          geometry="primitive: plane; height: auto; width: 0.5"
+          material="color: black"
+          text="align: center; width: 1; value: volcano"
+          event-set__enter1="_event:mouseenter;material.color: blue"
+          event-set__leave1="_event:mouseleave;material.color: black"
+          event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
+          event-set__click1="_event: click; _target: #environment; environment.preset:volcano"
+          event-set__click2="_event: click; _target: #controlText; value: environment set to volcano; visible:true"
+        ></a-entity>
+        <a-entity
+          geometry="primitive: plane; height: auto; width: 0.5"
+          material="color: black"
+          text="align: center; width: 1; value: starry"
+          event-set__enter1="_event:mouseenter;material.color: blue"
+          event-set__leave1="_event:mouseleave;material.color: black"
+          event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
+          event-set__click1="_event: click; _target: #environment; environment.preset:starry"
+          event-set__click2="_event: click; _target: #controlText; value: environment set to starry; visible:true"
+        ></a-entity>
+        <a-entity
+          geometry="primitive: plane; height: auto; width: 0.5"
+          material="color: black"
+          text="align: center; width: 1; value: tron"
+          event-set__enter1="_event:mouseenter;material.color: blue"
+          event-set__leave1="_event:mouseleave;material.color: black"
+          event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
+          event-set__click1="_event: click; _target: #environment; environment.preset:tron"
+          event-set__click2="_event: click; _target: #controlText; value: environment set to tron; visible:true"
+        ></a-entity>
+        <a-entity
+          geometry="primitive: plane; height: auto; width: 0.5"
+          material="color: black"
+          text="align: center; width: 1; value: checkerboard"
+          event-set__enter1="_event:mouseenter;material.color: blue"
+          event-set__leave1="_event:mouseleave;material.color: black"
+          event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
+          event-set__click1="_event: click; _target: #environment; environment.preset:checkerboard"
+          event-set__click2="_event: click; _target: #controlText; value: environment set to checkerboard; visible:true"
+        ></a-entity>
+        <a-entity
+          geometry="primitive: plane; height: auto; width: 0.5"
+          material="color: black"
+          text="align: center; width: 1; value: forest"
+          event-set__enter1="_event:mouseenter;material.color: blue"
+          event-set__leave1="_event:mouseleave;material.color: black"
+          event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
+          event-set__click1="_event: click; _target: #environment; environment.preset:forest"
+          event-set__click2="_event: click; _target: #controlText; value: environment set to forest; visible:true"
+        ></a-entity>
+         <a-entity
+          geometry="primitive: plane; height: auto; width: 0.5"
+          material="color: black"
+          text="align: center; width: 1; value: egypt"
+          event-set__enter1="_event:mouseenter;material.color: blue"
+          event-set__leave1="_event:mouseleave;material.color: black"
+          event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
+          event-set__click1="_event: click; _target: #environment; environment.preset:egypt"
+          event-set__click2="_event: click; _target: #controlText; value: environment set to egypt; visible:true"
+        ></a-entity>
+        <a-text
+          id="controlText"
+          value="This button does nothing yet.\nIt's a Work in Progress"
+          align="center"
+          color="#FFF"
+          visible="false"
+          position="1.25 0.6 -1.5"
+          scale=".25 .25 .25"
+        >
+        </a-text>
+      </a-entity>
     </a-scene>
   </body>
 </html>
