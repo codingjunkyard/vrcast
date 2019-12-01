@@ -7,39 +7,39 @@
     <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
-    
     <script src="js/rotate-player.js"></script>
     <script src="js/complog.js"></script>
   </head>
+  
   <body>
-    <a-scene stats vrlog>
+    <a-scene stats vrlog>  
+      
       <a-assets>
-        <img
-          id="groundTexture"
-          src="https://cdn.aframe.io/a-painter/images/floor.jpg"
-        />
-        <img
-          id="skyTexture"
-          src="https://cdn.aframe.io/a-painter/images/sky.jpg"
-        />
+        <a-asset-items
+        id="bottle"
+        src="https://cdn.glitch.com/f4d20005-e621-44df-8845-58843d86d147%2FWine_Bottle_White.glb?v=1573510574253"
+      ></a-asset-items>
+        <img           ></img>
+        <video         ></video>
+        <audio         ></audio>
+      
+        <a-mixin
+          id="interaction"
+          physics-collider
+          static-body="shape: sphere; sphereRadius: 0.02"
+          super-hands="colliderEvent: collisions;
+                            colliderEventProperty: els;
+                            colliderEndEvent: collisions;
+                            colliderEndEventProperty: clearedEls"
+          collision-filter="group: hands;
+                                   collidesWith: default, items;
+                                   collisionForces: false"
+        >
+        </a-mixin>
       </a-assets>
-
-      <a-plane
-        src="#groundTexture"
-        rotation="-90 0 0"
-        height="100"
-        width="100"
-      ></a-plane>
-
-      <a-light type="ambient" color="#445451"></a-light>
-      <a-light type="point" intensity="2" position="2 4 4"></a-light>
-      <a-sky
-        height="2048"
-        radius="30"
-        src="#skyTexture"
-        theta-length="90"
-        width="2048"
-      ></a-sky>
+    
+<!--START HERE -->
+      <a-entity environment="preset: starry"></a-entity>
 
       <!-- The Player rig. -->
       <!-- gamepad-controls="controller:1"-->
@@ -71,6 +71,8 @@
 
       <!-- The VR Console. -->
       <a-log position="0 1.6 -1.5"></a-log>
+    
+    
       <a-entity
         geometry="primitive: plane; height: auto; width: auto"
         position="1.25 1.6 -1.5"
