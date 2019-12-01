@@ -41,8 +41,7 @@
       <a-entity id="environment" environment="preset: starry"></a-entity>
 
       <!-- The Player rig. -->
-      <!-- gamepad-controls="controller:1"-->
-      <a-entity id="cameraRig" movement-controls rotateplayer="hand:combine">
+      <a-entity id="cameraRig" movement-controls rotateplayer="hand:right">
         <a-camera id="head" camera></a-camera>
         <a-entity
           id="left-hand"
@@ -69,10 +68,10 @@
       </a-entity>
 
       <!-- The VR Console. -->
-      <a-log position="0 1.6 -1.5"></a-log>
+      <a-log position="-0.7 1.6 -1.25" rotation="0 45 0"></a-log>
 
       <!--Interactive planes-->
-      <a-entity layout="type: box; margin: 0.06" position="1 1.6 -1.5">
+      <a-entity layout="type: box; margin: 0.06" position="0.8 1 -0.6" rotation="0 -30 0">
         <a-entity
           geometry="primitive: plane; height: auto; width: 0.5"
           material="color: black"
@@ -144,6 +143,7 @@
         >
         </a-text>
       </a-entity>
+      
     </a-scene>
   </body>
 </html>
