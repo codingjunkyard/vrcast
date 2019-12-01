@@ -17,7 +17,7 @@
       <a-assets>
         <a-asset-items
           id="GLTF"
-          src="https://cdn.glitch.com/f4d20005-e621-44df-8845-58843d86d147%2FWine_Bottle_White.glb?v=1573510574253"
+          src="https://cdn.glitch.com/bcd20947-b0a2-41ba-9449-90fc5e417806%2Fscene.gltf?v=1575243838443"
         ></a-asset-items>
         <img />
         <video></video>
@@ -49,11 +49,11 @@
       <!--START HERE -->
       <a-entity id="environment" environment="preset: starry"></a-entity>
       <a-entity
-        sound="src: #dreams; autoplay:true; loop:true; on:loaded"
+        
       ></a-entity>
 
       <!-- The Player rig. -->
-      <a-entity id="cameraRig" movement-controls rotateplayer="hand:combine">
+      <a-entity id="cameraRig" sound="src: #dreams; autoplay:true; volume: 0.2; loop:true; on:sound-loaded" movement-controls rotateplayer="hand:combine">
         <a-camera id="head" camera></a-camera>
         <a-entity
           id="left-hand"
@@ -97,7 +97,7 @@
           event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
           event-set__click1="_event: click; _target: #environment; environment.preset:volcano"
           event-set__click2="_event: click; _target: #controlText; value: environment set to volcano; visible:true"
-          sound="src:alien; on:click"
+          sound="src:crickets; on:click"
         ></a-entity>
         <a-entity
           geometry="primitive: plane; height: auto; width: 0.5"
