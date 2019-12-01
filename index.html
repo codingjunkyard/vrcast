@@ -16,7 +16,7 @@
     <a-scene stats vrlog>
       <a-assets>
         <a-asset-items
-          id="bottle"
+          id="GLTF"
           src="https://cdn.glitch.com/f4d20005-e621-44df-8845-58843d86d147%2FWine_Bottle_White.glb?v=1573510574253"
         ></a-asset-items>
         <img />
@@ -41,7 +41,7 @@
       <a-entity id="environment" environment="preset: starry"></a-entity>
 
       <!-- The Player rig. -->
-      <a-entity id="cameraRig" movement-controls rotateplayer="hand:right">
+      <a-entity id="cameraRig" movement-controls rotateplayer="hand:combine">
         <a-camera id="head" camera></a-camera>
         <a-entity
           id="left-hand"
@@ -68,7 +68,7 @@
       </a-entity>
 
       <!-- The VR Console. -->
-      <a-log position="-0.7 1.6 -1.25" rotation="0 45 0"></a-log>
+      <a-log position="-1.5 1.6 -1.25" rotation="0 45 0"></a-log>
 
       <!--Interactive planes-->
       <a-entity layout="type: box; margin: 0.06" position="0.8 1 -0.6" rotation="0 -30 0">
@@ -143,6 +143,16 @@
         >
         </a-text>
       </a-entity>
+      
+      <!--the GLTF model to import-->
+      <a-gltf-model
+        src="#GLTF"
+        position="0 1 -1.5"
+        scale=""
+        rotation=""
+      ></a-gltf-model>
+      
+      
       
     </a-scene>
   </body>
