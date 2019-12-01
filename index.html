@@ -10,19 +10,17 @@
     <script src="js/rotate-player.js"></script>
     <script src="js/complog.js"></script>
   </head>
-  
+
   <body>
-    <a-scene stats vrlog>  
-      
+    <a-scene stats vrlog>
       <a-assets>
         <a-asset-items
-        id="bottle"
-        src="https://cdn.glitch.com/f4d20005-e621-44df-8845-58843d86d147%2FWine_Bottle_White.glb?v=1573510574253"
-      ></a-asset-items>
-        <img           ></img>
-        <video         ></video>
-        <audio         ></audio>
-      
+          id="bottle"
+          src="https://cdn.glitch.com/f4d20005-e621-44df-8845-58843d86d147%2FWine_Bottle_White.glb?v=1573510574253"
+        ></a-asset-items>
+        <img />
+        <video></video>
+        <audio></audio>
         <a-mixin
           id="interaction"
           physics-collider
@@ -37,9 +35,9 @@
         >
         </a-mixin>
       </a-assets>
-    
-<!--START HERE -->
-      <a-entity environment="preset: starry"></a-entity>
+
+      <!--START HERE -->
+      <a-entity id= "environment" environment="preset: starry"></a-entity>
 
       <!-- The Player rig. -->
       <!-- gamepad-controls="controller:1"-->
@@ -71,44 +69,44 @@
 
       <!-- The VR Console. -->
       <a-log position="0 1.6 -1.5"></a-log>
-    
-    
-      <a-entity
-        geometry="primitive: plane; height: auto; width: auto"
-        position="1.25 1.6 -1.5"
-        material="color: black"
-        text="align: center; width: 1; value: Click here to move the ROTATION\n controls to LEFT thumbstick ."
-        event-set__enter1="_event:mouseenter;material.color: blue"
-        event-set__leave1="_event:mouseleave;material.color: black"
-        event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
-        event-set__click1="_event: click; _target: #cameraRig; rotateplayer.hand:left"
-        event-set__click2="_event: click; _target: #controlText; value: rotation is now on 
+
+      <!--Interactive planes-->
+      <a-entity layout="type: line; margin: 25" position="1.25 2.5 -1.5">
+        <a-entity
+          geometry="primitive: plane; height: .25; width: auto"
+          material="color: green"
+          text="align: center; width: 1; value: starry"
+          event-set__enter1="_event:mouseenter;material.color: blue"
+          event-set__leave1="_event:mouseleave;material.color: black"
+          event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
+          event-set__click1="_event: click; _target: #environment; environment.preset:ocean"
+          event-set__click2="_event: click; _target: #controlText; value: rotation is now on 
                            LEFT thumbstick and movement on RIGHT thumbstick; visible:true"
-      ></a-entity>
-      <a-entity
-        geometry="primitive: plane; height: auto; width: auto"
-        position="1.25 1.2 -1.5"
-        material="color: black"
-        text="align: center; width: 1; value: Click here to COMBINE ROTATION and MOVEMENT\ncontrols to RIGHT thumbstick."
-        event-set__enter1="_event:mouseenter;material.color: blue"
-        event-set__leave1="_event:mouseleave;material.color: black"
-        event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
-        event-set__click1="_event: click; _target: #cameraRig; rotateplayer.hand:combine"
-        event-set__click2="_event: click; _target: #controlText; value: rotation is now on 
+        ></a-entity>
+        <a-entity
+          geometry="primitive: plane; height: auto; width: auto"
+          material="color: black"
+          text="align: center; width: 1; value: Click here to COMBINE ROTATION and MOVEMENT\ncontrols to RIGHT thumbstick."
+          event-set__enter1="_event:mouseenter;material.color: blue"
+          event-set__leave1="_event:mouseleave;material.color: black"
+          event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
+          event-set__click1="_event: click; _target: #cameraRig; rotateplayer.hand:combine"
+          event-set__click2="_event: click; _target: #controlText; value: rotation is now on 
                            movement and rotation now on RIGHT thumbstick; visible:true"
-      ></a-entity>
-      <a-entity
-        geometry="primitive: plane; height: auto; width: auto"
-        position="1.25 0.8 -1.5"
-        material="color: black"
-        text="align: center; width: 1; value: Click here to move the ROTATION\n controls to RIGHT thumbstick ."
-        event-set__enter1="_event:mouseenter;material.color: blue"
-        event-set__leave1="_event:mouseleave;material.color: black"
-        event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
-        event-set__click1="_event: click; _target: #cameraRig; rotateplayer.hand:right"
-        event-set__click2="_event: click; _target: #controlText; value: rotation is now on 
+        ></a-entity>
+        <a-entity
+          geometry="primitive: plane; height: auto; width: auto"
+          material="color: black"
+          text="align: center; width: 1; value: Click here to move the ROTATION\n controls to RIGHT thumbstick ."
+          event-set__enter1="_event:mouseenter;material.color: blue"
+          event-set__leave1="_event:mouseleave;material.color: black"
+          event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
+          event-set__click1="_event: click; _target: #cameraRig; rotateplayer.hand:right"
+          event-set__click2="_event: click; _target: #controlText; value: rotation is now on 
                            RIGHT thumbstick and movement on LEFT thumbstick; visible:true"
-      ></a-entity>
+        ></a-entity>
+      </a-entity>
+      
       <a-text
         id="controlText"
         value="This button does nothing yet.\nIt's a Work in Progress"
