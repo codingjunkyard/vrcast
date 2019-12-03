@@ -1,6 +1,7 @@
 AFRAME.registerComponent("vrlog", {
   init: function() {
-    console.log(this.el.querySelector("#cameraRig"));
+    console.log(this);
+    //.el.querySelector("#cameraRig")
     
     AFRAME.log(
       "Virtual Reality logs. Cool!"
