@@ -17,7 +17,7 @@
       <a-assets>
         <a-asset-items
           id="GLTF"
-          src="https://cdn.glitch.com/bcd20947-b0a2-41ba-9449-90fc5e417806%2FT800.glb?v=1575335813442"
+          src="https://cdn.glitch.com/bcd20947-b0a2-41ba-9449-90fc5e417806%2Fdinorapotor.glb?v=1575244686312"
         ></a-asset-items>
         <img />
         <video></video>
@@ -49,20 +49,19 @@
       <!--START HERE -->
       <a-entity id="environment" environment="preset: starry"></a-entity>
 
-      <!-- The Player rig. -->
-      <a-entity id="cameraRig" movement-controls rotateplayer="hand:right">
-        <a-camera id="head" camera>
-          <a-entity
+      <!-- The Player rig.  <a-entity
             geometry="primitive: plane; height: auto; width: .5"
             position="0.1 0.1 -0.7"
             text="align: center; width: 1.0; value: cool HUD!\nCLICK TO PLAY SOUND"
             sound="src: #dreams; volume: 0.2; loop:true; on:click"
             scale="0.7"
-          ></a-entity>
+          ></a-entity>-->
+      <a-entity id="cameraRig" movement-controls rotateplayer="hand:right">
+        <a-camera id="head" camera>   
         </a-camera>
         <a-entity
           id="left-hand"
-          laser-controls=""
+          
           oculus-touch-controls="hand:left"
           teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger"
         >
@@ -171,8 +170,8 @@
       <!--the GLTF model to import-->
       <a-gltf-model
         src="#GLTF"
-        position="0 3 -5"
-        scale="3 3 3"
+        position="0 3 -10"
+        scale="1 1 1"
         rotation=""
         animation-mixer=""
       ></a-gltf-model>
