@@ -49,19 +49,19 @@
       <!--START HERE -->
       <a-entity id="environment" environment="preset: starry"></a-entity>
 
-      <!-- The Player rig.  <a-entity
+      <!-- The Player rig. -->
+      <a-entity id="cameraRig" movement-controls rotateplayer="hand:combine">
+        <a-camera id="head" camera>
+          <a-entity
             geometry="primitive: plane; height: auto; width: .5"
             position="0.1 0.1 -0.7"
             text="align: center; width: 1.0; value: cool HUD!\nCLICK TO PLAY SOUND"
             sound="src: #dreams; volume: 0.2; loop:true; on:click"
             scale="0.7"
-          ></a-entity>-->
-      <a-entity id="cameraRig" movement-controls rotateplayer="hand:right">
-        <a-camera id="head" camera>   
+          ></a-entity>
         </a-camera>
         <a-entity
           id="left-hand"
-          
           oculus-touch-controls="hand:left"
           teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger"
         >
@@ -93,6 +93,9 @@
         position="0.8 1 -0.6"
         rotation="0 -30 0"
       >
+        <a-entity
+          geometry="primative: "
+        ></a-entity>
         <a-entity
           geometry="primitive: plane; height: auto; width: 0.5"
           material="color: black"
@@ -154,6 +157,7 @@
           event-set__click1="_event: click; _target: #environment; environment.preset:egypt"
           event-set__click2="_event: click; _target: #controlText; value: environment set to egypt; visible:true"
         ></a-entity>
+        
 
         <a-text
           id="controlText"
