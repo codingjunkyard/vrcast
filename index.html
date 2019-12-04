@@ -31,6 +31,11 @@
           src="https://cdn.glitch.com/bcd20947-b0a2-41ba-9449-90fc5e417806%2FCrickets_with_Distant_Traffic.mp3?v=1575241245379"
           preload="auto"
         ></audio>
+        <audio
+          id="aliens"
+          src="https://cdn.glitch.com/bcd20947-b0a2-41ba-9449-90fc5e417806%2FAlien_Song.mp3?v=1575241251690"
+          preload="auto"
+        ></audio>
         <a-mixin
           id="interaction"
           physics-collider
@@ -97,7 +102,12 @@
           geometry="primitive: plane; height: auto; width: 0.5"
           material="color: black"
           text="align: center; width: 1; value: japan"
-          event-set__enter1="event:mouseenter;material.color"
+          event-set__enter1="_event:mouseenter;material.color: red"
+          event-set__leave1="_event:mouseleave;material.color: black"
+          event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
+          event-set__click1="_event: click; _target: #environment; environment.preset:japan"
+          event-set__click2="_event: click; _target: #controlText; value: environment set to japan; visible:true"
+          sound="src:aliens; on:click"                  
         ></a-entity>
         <a-entity
           geometry="primitive: plane; height: auto; width: 0.5"
