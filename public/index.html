@@ -97,13 +97,13 @@
       <!--START HERE -->
       <a-entity id="environment" environment="preset: default"></a-entity>
 
-      <!-- The Player rig. -->
+      <!-- The Player rig.spawn-in-circle="radius:3" -->
       <a-entity
         id="cameraRig"
         movement-controls
         rotateplayer="hand:combine"
         networked="template:#avatar-template;attachTemplateToLocal:false;"
-        spawn-in-circle="radius:3"
+        
         wasd-controls
         look-controls
       >
