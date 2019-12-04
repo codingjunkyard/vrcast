@@ -8,16 +8,15 @@
     <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
     <script src="https://unpkg.com/aframe-layout-component@4.1.0/dist/aframe-layout-component.min.js"></script>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
     <script src="easyrtc/easyrtc.js"></script>
     <script src="https://unpkg.com/networked-aframe@^0.6.0/dist/networked-aframe.min.js"></script>
-    
+
     <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>
-    <script src="/js/spawn-in-circle.component.js"></script>   
-    
-    
+    <script src="/js/spawn-in-circle.component.js"></script>
+
     <script src="js/rotate-player.js"></script>
     <script src="js/complog.js"></script>
   </head>
@@ -28,6 +27,7 @@
         <a-asset-items
           id="GLTF"
           src="https://cdn.glitch.com/bcd20947-b0a2-41ba-9449-90fc5e417806%2Fdinorapotor.glb?v=1575244686312"
+          crossorigin="anonymous"
         ></a-asset-items>
         <img />
         <video></video>
@@ -35,16 +35,19 @@
           id="dreams"
           src="https://cdn.glitch.com/bcd20947-b0a2-41ba-9449-90fc5e417806%2FDreams.mp3?v=1575241249376"
           preload="auto"
+          crossorigin="anonymous"
         ></audio>
         <audio
           id="crickets"
           src="https://cdn.glitch.com/7d919ff3-c0b4-4030-bdbc-12fb0da3e7c4%2FCrickets_with_Distant_Traffic.mp3?v=1575459364372"
           preload="auto"
+          crossorigin="anonymous"
         ></audio>
         <audio
           id="aliens"
           src="https://cdn.glitch.com/bcd20947-b0a2-41ba-9449-90fc5e417806%2FAlien_Song.mp3?v=1575241251690"
           preload="auto"
+          crossorigin="anonymous"
         ></audio>
         <a-mixin
           id="interaction"
@@ -117,7 +120,7 @@
           event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
           event-set__click1="_event: click; _target: #environment; environment.preset:japan"
           event-set__click2="_event: click; _target: #controlText; value: environment set to japan; visible:true"
-          sound="src:aliens; on:click"                  
+          sound="src:aliens; on:click"
         ></a-entity>
         <a-entity
           geometry="primitive: plane; height: auto; width: 0.5"
@@ -180,7 +183,6 @@
           event-set__click1="_event: click; _target: #environment; environment.preset:egypt"
           event-set__click2="_event: click; _target: #controlText; value: environment set to egypt; visible:true"
         ></a-entity>
-        
 
         <a-text
           id="controlText"
