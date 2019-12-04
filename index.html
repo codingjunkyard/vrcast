@@ -10,15 +10,14 @@
     <script src="https://unpkg.com/aframe-layout-component@4.1.0/dist/aframe-layout-component.min.js"></script>
     <script src="js/rotate-player.js"></script>
     <script src="js/complog.js"></script>
-        
   </head>
 
   <body>
     <a-scene stats vrlog>
-       <a-assets>
+      <a-assets>
         <a-asset-items
           id="GLTF"
-          src="https://cdn.jsdeliver.net/gh/kalmykov/fr24-3d-models/blob/master/models/pa28.glb?raw=true"
+          src="https://cdn.glitch.com/bcd20947-b0a2-41ba-9449-90fc5e417806%2FT800.glb?v=1575335813442"
         ></a-asset-items>
         <img />
         <video></video>
@@ -54,18 +53,16 @@
       <a-entity id="cameraRig" movement-controls rotateplayer="hand:right">
         <a-camera id="head" camera>
           <a-entity
-          geometry="primitive: plane; height: auto; width: .5"
-                    position="0.1 0.1 -0.7"
-          
-                  text="align: center; width: 1.0; value: cool HUD!\nCLICK TO PLAY SOUND"
-          sound="src: #dreams; volume: 0.2; loop:true; on:click"
-          scale="0.7"
-        ></a-entity>
+            geometry="primitive: plane; height: auto; width: .5"
+            position="0.1 0.1 -0.7"
+            text="align: center; width: 1.0; value: cool HUD!\nCLICK TO PLAY SOUND"
+            sound="src: #dreams; volume: 0.2; loop:true; on:click"
+            scale="0.7"
+          ></a-entity>
         </a-camera>
         <a-entity
           id="left-hand"
           laser-controls=""
-                  raycaster="far: 3"
           oculus-touch-controls="hand:left"
           teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger"
         >
@@ -76,8 +73,9 @@
         </a-entity>
         <a-entity
           id="right-hand"
-          
-          oculus-touch-controls
+          laser-controls=""
+          raycaster="far: 3"
+          oculus-touch-controls="hand:right"
         >
           <a-entity
             id="handText"
@@ -157,7 +155,7 @@
           event-set__click1="_event: click; _target: #environment; environment.preset:egypt"
           event-set__click2="_event: click; _target: #controlText; value: environment set to egypt; visible:true"
         ></a-entity>
-        
+
         <a-text
           id="controlText"
           value="This button does nothing yet.\nIt's a Work in Progress"
