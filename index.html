@@ -64,6 +64,8 @@
         </a-camera>
         <a-entity
           id="left-hand"
+          laser-controls=""
+                  raycaster="far: 3"
           oculus-touch-controls="hand:left"
           teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger"
         >
@@ -74,8 +76,7 @@
         </a-entity>
         <a-entity
           id="right-hand"
-          laser-controls=""
-          raycaster="far: 3"
+          
           oculus-touch-controls
         >
           <a-entity
