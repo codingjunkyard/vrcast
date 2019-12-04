@@ -92,21 +92,33 @@
             </a-entity>
           </a-entity>
         </template>
+
+        <template id="body">
+          <a-entity>
+            <a-box color="#f00"></a-box>
+          </a-entity>
+        </template>
       </a-assets>
 
       <!--START HERE -->
       <a-entity id="environment" environment="preset: default"></a-entity>
 
-      <!-- The Player rig. spawn-in-circle="radius:7"-->
+      <!-- The Player rig. -->
       <a-entity
         class="head"
         id="cameraRig"
         movement-controls
-        rotateplayer="hand:combine"
-        networked="template:#avatar-template;attachTemplateToLocal:false;"
+        rotateplayer="hand:right"
+        spawn-in-circle="radius:7"
+        networked="template:#body;attachTemplateToLocal:false;"
         look-controls
       >
-        <a-camera id="head" class="head" camera> </a-camera>
+        <a-camera
+          id="head"
+          networked="template:#avatar-template;attachTemplateToLocal:false;"
+          camera
+        >
+        </a-camera>
 
         <a-entity
           id="left-hand"
