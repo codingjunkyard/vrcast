@@ -705,4 +705,4 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  networked-aframe: ^0.6.0
+  networked-aframe: ^0.6.1
