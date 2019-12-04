@@ -103,21 +103,20 @@
         movement-controls
         rotateplayer="hand:combine"
         networked="template:#avatar-template;attachTemplateToLocal:false;"
-                spawn-in-circle="radius:3"
+        spawn-in-circle="radius:3"
+        wasd-controls
+        look-controls
       >
         <a-camera id="head" camera>
           <a-entity
             geometry="primitive: plane; height: auto; width: .5"
-            position="0.1 0.1 -0.7"
+            position="0 1.6 0"
             text="align: center; width: 1.0; value: cool HUD!\nCLICK TO PLAY SOUND"
             sound="src: #dreams; volume: 0.2; loop:true; on:click"
             scale="0.7"
           ></a-entity>
         </a-camera>
-        <a-sphere class="head"
-          visible="false"
-          random-color
-        ></a-sphere>
+
         <a-entity
           id="left-hand"
           oculus-touch-controls="hand:left"
