@@ -101,12 +101,12 @@
         <template id="body">
           <a-entity>
             <a-gltf-model
-        src="#ufo"
-        position="0 3 -10"
-        scale="1 1 1"
-        rotation=""
-        animation-mixer=""
-      ></a-gltf-model>
+              src="#ufo"
+              position="0 3 -10"
+              scale="1 1 1"
+              rotation=""
+              animation-mixer=""
+            ></a-gltf-model>
           </a-entity>
         </template>
       </a-assets>
@@ -119,14 +119,14 @@
         class="head"
         id="cameraRig"
         movement-controls
-        rotateplayer="hand:right"
+        rotateplayer
         spawn-in-circle="radius:7"
         networked="template:#body;attachTemplateToLocal:false;"
         look-controls
       >
         <a-camera
           id="head"
-                  class="head"
+          class="head"
           networked="template:#avatar-template;attachTemplateToLocal:false;"
           camera
         >
