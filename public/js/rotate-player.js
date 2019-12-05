@@ -9,15 +9,20 @@ AFRAME.registerComponent("rotateplayer", {
     var playerGetter = document.querySelector("#cameraRig");
     var playerAffector = this.el.querySelector(handSelect);
     var y = playerGetter.getAttribute("rotation").y;
-
-    if (data.hand == "right") {
+    var count = 0;
+    this.el.addEventListener("abuttondown", function(evt1) {
+      AFRAME.log("aButton Pressed"+count);
+      count++;
+    });
+    
+    /*if (data.hand == "right") {
       playerGetter.setAttribute("gamepad-controls", { controller: 0 });
     } else if (data.hand == "left") {
       playerGetter.setAttribute("gamepad-controls", { controller: 1 });
     } else {
       playerAffector = this.el.querySelector("#right-hand");
       playerGetter.setAttribute("gamepad-controls", { controller: 1 });
-    }
+    }*/
 
     console.log(playerAffector);
     //console.log(controlinfo);
