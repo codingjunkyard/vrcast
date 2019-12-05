@@ -18,13 +18,12 @@ AFRAME.registerComponent("rotateplayer", {
         count = 1;
       } else if (count == 1) {
         playerGetter.setAttribute("gamepad-controls", { controller: 1 });
-        count = 0;
-      } /*else if (count == 2) {
-        AFRAME.log(playerAffector);
-        playerAffector = this.el.querySelector("#right-hand");
+        count = 2;
+      } else if (count == 2) {
+        playerAffector = this.el.querySelector("#combine-hand");
         playerGetter.setAttribute("gamepad-controls", { controller: 1 });
         count = 0;
-      }*/
+      }
     });
 
     //console.log(playerAffector);
@@ -41,16 +40,11 @@ AFRAME.registerComponent("rotateplayer", {
         if (y == 360) {
           y = 0;
         }
-      }
-    });
-
-    playerAffector.addEventListener("axismove", function(evt2) {
-      if (evt2.detail.axis[0] < -0.9) {
+      } else if (evt1.detail.axis[0] < -0.9) {
         playerGetter.setAttribute("rotation", { x: 0, y: (y += 5), z: 0 });
         if (y == -360) {
           y = 0;
         }
-        //AFRAME.log(y);
       }
     });
   }
