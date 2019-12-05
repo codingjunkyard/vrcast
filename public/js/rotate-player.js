@@ -30,6 +30,7 @@ AFRAME.registerComponent("rotateplayer", {
         AFRAME.log("count "+ count +"hand " + handSelect);
       } else {
         this.setAttribute("rotate-player",{hand: "left"});
+        handSelect = "#left-hand";
         playerGetter.setAttribute("gamepad-controls", { controller: 1 });
         count = 0;
         AFRAME.log("count "+ count +"hand " + handSelect);
