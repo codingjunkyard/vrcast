@@ -18,13 +18,13 @@ AFRAME.registerComponent("rotateplayer", {
         count = 1;
       } else if (count == 1) {
         playerGetter.setAttribute("gamepad-controls", { controller: 1 });
-        count = 2;
-      } else if (count == 2) {
+        count = 0;
+      } /*else if (count == 2) {
         AFRAME.log(playerAffector);
         playerAffector = this.el.querySelector("#right-hand");
         playerGetter.setAttribute("gamepad-controls", { controller: 1 });
         count = 0;
-      }
+      }*/
     });
 
     //console.log(playerAffector);
