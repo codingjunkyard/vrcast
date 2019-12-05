@@ -23,14 +23,14 @@ AFRAME.registerComponent("rotateplayer", {
         playerGetter.setAttribute("gamepad-controls", { controller: 1 });
         count = 3;
       } else {
-        playerAffector = this.el.querySelector("#camera");
+        playerAffector = this.el.querySelector("#left-hand");
         playerGetter.setAttribute("gamepad-controls", { controller: 1 });
         count = 0;
       }
     });
 
-    console.log("player affector" + playerAffector);
-    console.log(playerGetter);
+    console.log(playerAffector);
+    //console.log(playerGetter);
     //console.log(playerGetter);
     //console.log(y);
 
