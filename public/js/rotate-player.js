@@ -18,23 +18,25 @@ AFRAME.registerComponent("rotateplayer", {
         this.setAttribute("rotate-player",{hand: "left"});
         playerGetter.setAttribute("gamepad-controls", { controller: 0 });
         count = 1;
-        AFRAME.log("count "+ count +"rotation hand " + this.getAttribute("hand"));
+        AFRAME.log("count "+ count +"rotation hand " + this.getAttribute("rotateplayer"));
+        console.log(this.getAttribute("rotateplayer"));
+        
       } else if (count == 1) {
         this.setAttribute("rotate-player",{hand: "right"});
         playerGetter.setAttribute("gamepad-controls", { controller: 0});
         count = 2;
-        AFRAME.log("count "+ count +"rotation hand " + this.getAttribute("hand"));
+        AFRAME.log("count "+ count +"rotation hand " + this.getAttribute("rotateplayer"));
       } else if (count == 2) {
         this.setAttribute("rotate-player",{hand: "left"});
         playerGetter.setAttribute("gamepad-controls", { controller: 1 });
         count = 3;
-        AFRAME.log("count "+ count +"rotation hand " + this.getAttribute("hand"));
+        AFRAME.log("count "+ count +"rotation hand " + this.getAttribute("rotateplayer"));
         //AFRAME.log("count "+ count +"hand " + handSelect);
       } else {
         this.setAttribute("rotate-player",{hand: "right"});
         playerGetter.setAttribute("gamepad-controls", { controller: 1 });
         count = 0;
-        AFRAME.log("count "+ count +"rotation hand " + this.getAttribute("hand"));
+        AFRAME.log("count "+ count +"rotation hand " + this.getAttribute("rotateplayer"));
       }
     });
 
