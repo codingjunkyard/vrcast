@@ -19,6 +19,7 @@ AFRAME.registerComponent("rotateplayer", {
         playerGetter.setAttribute("gamepad-controls", { controller: 1 });
         count = 2;
       } else if (count == 2) {
+        console.log(playerAffector);
         playerAffector = this.el.querySelector("#right-hand");
         playerGetter.setAttribute("gamepad-controls", { controller: 1 });
         count = 3;
@@ -29,7 +30,7 @@ AFRAME.registerComponent("rotateplayer", {
       }
     });
 
-    console.log(playerAffector);
+    
     //console.log(playerGetter);
     //console.log(playerGetter);
     //console.log(y);

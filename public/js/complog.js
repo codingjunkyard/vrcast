@@ -1,6 +1,6 @@
 AFRAME.registerComponent("vrlog", {
   init: function() {
-    console.log(this);
+   // console.log(this);
     //.el.querySelector("#cameraRig")
     
     AFRAME.log(
