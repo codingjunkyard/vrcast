@@ -12,7 +12,6 @@ AFRAME.registerComponent("rotateplayer", {
     var count = 0;
 
     this.el.addEventListener("abuttondown", function(evt1) {
-      AFRAME.log("aButton Pressed" + count);
       if (count == 0) {
         playerGetter.setAttribute("gamepad-controls", { controller: 0 });
         count = 1;
@@ -20,16 +19,19 @@ AFRAME.registerComponent("rotateplayer", {
         playerGetter.setAttribute("gamepad-controls", { controller: 1 });
         count = 2;
       } else if (count == 2) {
-        playerAffector = this.el.querySelector("#combine-hand");
+        playerAffector = this.el.querySelector("#right-hand");
+        playerGetter.setAttribute("gamepad-controls", { controller: 1 });
+        count = 3;
+      } else {
+        playerAffector = this.el.querySelector("#camera");
         playerGetter.setAttribute("gamepad-controls", { controller: 1 });
         count = 0;
       }
     });
 
-    //console.log(playerAffector);
-    //console.log(controlinfo);
+    console.log("player affector" + playerAffector);
+    console.log(playerGetter);
     //console.log(playerGetter);
-    //console.log(playerAffector);
     //console.log(y);
 
     playerAffector.addEventListener("axismove", function(evt1) {
