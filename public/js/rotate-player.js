@@ -17,12 +17,9 @@ AFRAME.registerComponent("rotateplayer", {
         playerGetter.setAttribute("movement-controls");
         playerGetter.setAttribute("gamepad-controls", { controller: 0 });
         count = 1;
-        AFRAME.log("movement hand: controller: 0");
-                //AFRAME.log("count " + count + " this ");
-
-
+        
         //AFRAME.log("count " + count + " this ");
-        //AFRAME.log(playerGetter.getAttribute("rotateplayer"));
+        AFRAME.log(playerGetter.getAttribute("rotateplayer"));
       } else if (count == 1) {
         playerGetter.setAttribute("rotateplayer", { hand: "right" });
         playerGetter.setAttribute("movement-controls");
@@ -50,7 +47,9 @@ AFRAME.registerComponent("rotateplayer", {
     //console.log(playerGetter);
     //console.log(playerGetter);
     //console.log(y);
-    AFRAME.log("count " + count + " rotation hand ");
+    AFRAME.log("movement hand: ");
+    AFRAME.log(playerGetter.getAttribute("gamepad-controls.controller"));
+    AFRAME.log("rotation hand: ");
     AFRAME.log(playerGetter.getAttribute("rotateplayer"));
 
     playerAffector.addEventListener("axismove", function(evt1) {
