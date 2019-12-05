@@ -21,16 +21,13 @@ AFRAME.registerComponent("rotateplayer", {
         playerGetter.setAttribute("gamepad-controls", { controller: 1 });
         count = 2;
       } else if (count == 2) {
-        handSelect = "#right-hand";
-        
+        this.document.querySelector("cameraRig").setAttribute("rotate-player",{hand: "right"});
         playerGetter.setAttribute("gamepad-controls", { controller: 1 });
-
         count = 3;
       } else {
-        handSelect = "#left-hand";
-        playerGetter.setAttribute("gamepad-controls", { controller: 1 });
-
-        count = 3;
+        this.document.querySelector("cameraRig").setAttribute("rotate-player",{hand: "right"});
+        playerGetter.setAttribute("gamepad-controls", { controller: 0 });
+        count = 0;
       }
     });
 
