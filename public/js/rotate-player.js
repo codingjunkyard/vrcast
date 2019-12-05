@@ -22,7 +22,7 @@ AFRAME.registerComponent("rotateplayer", {
         count = 2;
       } else if (count == 2) {
         handSelect = "#right-hand";
-        playerAffector = globalThis.el.querySelector(handSelect);
+        
         playerGetter.setAttribute("gamepad-controls", { controller: 1 });
 
         count = 3;
