@@ -10,21 +10,24 @@ AFRAME.registerComponent("rotateplayer", {
     var playerAffector = this.el.querySelector(handSelect);
     var y = playerGetter.getAttribute("rotation").y;
     var count = 0;
-    this.el.addEventListener("abuttondown", function(evt1) {
-      AFRAME.log("aButton Pressed"+count);
-      count++;
-    });
-    
-    /*if (data.hand == "right") {
-      playerGetter.setAttribute("gamepad-controls", { controller: 0 });
-    } else if (data.hand == "left") {
-      playerGetter.setAttribute("gamepad-controls", { controller: 1 });
-    } else {
-      playerAffector = this.el.querySelector("#right-hand");
-      playerGetter.setAttribute("gamepad-controls", { controller: 1 });
-    }*/
 
-    console.log(playerAffector);
+    this.el.addEventListener("abuttondown", function(evt1) {
+      AFRAME.log("aButton Pressed" + count);
+      if (count == 0) {
+        playerGetter.setAttribute("gamepad-controls", { controller: 0 });
+        count = 1;
+      } else if (count == 1) {
+        playerGetter.setAttribute("gamepad-controls", { controller: 1 });
+        count = 2;
+      } else if (count == 2) {
+        AFRAME.log(playerAffector);
+        playerAffector = this.el.querySelector("#right-hand");
+        playerGetter.setAttribute("gamepad-controls", { controller: 1 });
+        count = 0;
+      }
+    });
+
+    //console.log(playerAffector);
     //console.log(controlinfo);
     //console.log(playerGetter);
     //console.log(playerAffector);
