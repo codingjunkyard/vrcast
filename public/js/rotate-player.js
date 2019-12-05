@@ -17,17 +17,22 @@ AFRAME.registerComponent("rotateplayer", {
       if (count == 0) {
         playerGetter.setAttribute("gamepad-controls", { controller: 0 });
         count = 1;
+        AFRAME.log("count "+ count +"hand " + handSelect);
       } else if (count == 1) {
         playerGetter.setAttribute("gamepad-controls", { controller: 1 });
         count = 2;
+        AFRAME.log("count "+ count +"hand " + handSelect);
       } else if (count == 2) {
-        this.document.querySelector("cameraRig").setAttribute("rotate-player",{hand: "right"});
-        playerGetter.setAttribute("gamepad-controls", { controller: 1 });
-        count = 3;
-      } else {
-        this.document.querySelector("cameraRig").setAttribute("rotate-player",{hand: "right"});
+        console.log(this);
+        this.setAttribute("rotate-player",{hand: "right"});
         playerGetter.setAttribute("gamepad-controls", { controller: 0 });
+        count = 3;
+        AFRAME.log("count "+ count +"hand " + handSelect);
+      } else {
+        this.setAttribute("rotate-player",{hand: "left"});
+        playerGetter.setAttribute("gamepad-controls", { controller: 1 });
         count = 0;
+        AFRAME.log("count "+ count +"hand " + handSelect);
       }
     });
 
