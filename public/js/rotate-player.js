@@ -15,29 +15,29 @@ AFRAME.registerComponent("rotateplayer", {
 
     this.el.addEventListener("abuttondown", function(evt1) {
       if (count == 0) {
-        playerGetter.setAttribute("rotate-player", { hand: "left" });
+        playerGetter.setAttribute("rotateplayer", { hand: "left" });
         playerGetter.setAttribute("gamepad-controls", { controller: 0 });
         count = 1;
         AFRAME.log("count " + count + " this ");
-        console.log(this);
+        AFRAME.log(playerGetter.getAttribute("rotateplayer"));
       } else if (count == 1) {
-        playerGetter.setAttribute("rotate-player", { hand: "right" });
+        playerGetter.setAttribute("rotateplayer", { hand: "right" });
         playerGetter.setAttribute("gamepad-controls", { controller: 0 });
         count = 2;
         AFRAME.log("count " + count + " rotation hand ");
-        console.log(playerGetter.getAttribute("rotateplayer"));
+        AFRAME.log(playerGetter.getAttribute("rotateplayer"));
       } else if (count == 2) {
-        playerGetter.setAttribute("rotate-player", { hand: "left" });
+        playerGetter.setAttribute("rotateplayer", { hand: "left" });
         playerGetter.setAttribute("gamepad-controls", { controller: 1 });
         count = 3;
         AFRAME.log("count " + count + " rotation hand ");
-        console.log(playerGetter.getAttribute("rotateplayer")); 
+        AFRAME.log(playerGetter.getAttribute("rotateplayer"));
       } else {
-        playerGetter.setAttribute("rotate-player", { hand: "right" });
+        playerGetter.setAttribute("rotateplayer", { hand: "right" });
         playerGetter.setAttribute("gamepad-controls", { controller: 1 });
         count = 0;
         AFRAME.log("count " + count + " rotation hand ");
-        console.log(playerGetter.getAttribute("rotateplayer"));
+        AFRAME.log(playerGetter.getAttribute("rotateplayer"));
       }
     });
 
