@@ -10,12 +10,10 @@ AFRAME.registerComponent("rotateplayer", {
     var playerAffector = this.el.querySelector(handSelect);
     var y = playerGetter.getAttribute("rotation").y;
     var count = 0;
-    console.log(playerGetter);
-    console.log(playerGetter.getAttribute("gamepad-controls"));
     this.el.addEventListener("abuttondown", function(evt1) {
       if (count == 0) {
         playerGetter.setAttribute("gamepad-controls", { controller: 0 });
-      //  AFRAME.log("Movement Controller 0");
+        //  AFRAME.log("Movement Controller 0");
         count = 1;
       } else if (count == 1) {
         playerGetter.setAttribute("gamepad-controls", { controller: 1 });
