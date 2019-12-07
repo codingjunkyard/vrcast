@@ -100,15 +100,16 @@
         </template>
 
         <template id="body">
-          <a-entity>
-            <a-gltf-model
+          <a-box></a-box>
+          <!--<a-entity>
+           <a-gltf-model
               src="#ufo"
               position="0 3 -10"
               scale="1 1 1"
               rotation=""
               animation-mixer=""
             ></a-gltf-model>
-          </a-entity>
+          </a-entity>-->
         </template>
       </a-assets>
 
@@ -117,7 +118,6 @@
 
       <!-- The Player rig. -->
       <a-entity
-        class="head"
         id="cameraRig"
         movement-controls
         rotateplayer
@@ -127,7 +127,6 @@
       >
         <a-camera
           id="head"
-          class="head"
           networked="template:#avatar-template;attachTemplateToLocal:false;"
           camera
         >
