@@ -40,7 +40,7 @@
         ></a-asset-items>
         <img
           id="360image"
-          src="https://cdn.glitch.com/a1665d7b-f8ce-4bf4-98df-7ba3d4a83c9c%2Fmisty_pines_1k.jpg?v=1584647809261"
+          src="https://cdn.glitch.com/a1665d7b-f8ce-4bf4-98df-7ba3d4a83c9c%2Fvrpac.jpg?v=1584654859186"
         />
         <!-- Single source video.playsinline -->
         <video
@@ -137,11 +137,12 @@
       <!--START HERE <a-entity id="environment" environment="preset: default"></a-entity> -->
       <a-sky src="#360image" radius="100" position="0 0 0"> </a-sky>
 
-      <!-- The Player rig. spawn-in-circle="radius:7"-->
+      <!-- The Player rig. -->
       <a-entity
         id="cameraRig"
         movement-controls
         rotateplayer
+        spawn-in-circle="radius:7"
         spawnaudience
         networked="template:#body;attachTemplateToLocal:false;"
         look-controls
