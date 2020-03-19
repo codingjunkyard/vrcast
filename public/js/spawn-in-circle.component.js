@@ -1,3 +1,5 @@
+var count = 1;
+
 AFRAME.registerComponent('spawn-in-circle', {
   schema: {
     radius: {type: 'number', default: 1}
@@ -6,7 +8,6 @@ AFRAME.registerComponent('spawn-in-circle', {
   init: function() {
     var el = this.el;
     var center = el.getAttribute('position');
-    var count = count + 1;
     var angleRad = this.getRandomAngleInRadians();
     var circlePoint = this.randomPointOnCircle(this.data.radius, angleRad);
     var worldPoint = {x: circlePoint.x + center.x, y: center.y+1.2, z: circlePoint.y + center.z};
@@ -18,7 +19,6 @@ AFRAME.registerComponent('spawn-in-circle', {
     var angleRad = THREE.Math.degToRad(angleToCenter);
     el.object3D.rotation.set(0, angleRad, 0);
     console.log('angle deg', angleDeg);
-    console.log('count', count);
   },
 
   getRandomAngleInRadians: function() {

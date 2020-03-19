@@ -18,6 +18,7 @@
     <script src="js/spawn-in-circle.component.js"></script>
 
     <script src="easyrtc/easyrtc.js"></script>
+    <script src="js/spawnAudience.js"></script>
     <script src="js/rotate-player.js"></script>
     <script src="js/complog.js"></script>
     <script src="js/event.js"></script>
@@ -136,13 +137,12 @@
       <!--START HERE <a-entity id="environment" environment="preset: default"></a-entity> -->
       <a-sky src="#360image" radius="100" position="0 0 0"> </a-sky>
 
-      <!-- The Player rig. -->
+      <!-- The Player rig. spawn-in-circle="radius:7"-->
       <a-entity
         id="cameraRig"
         movement-controls
         rotateplayer
-        spawn-in-circle="radius:7"
-        spawnAudience
+        spawnaudience
         networked="template:#body;attachTemplateToLocal:false;"
         look-controls
       >
@@ -156,7 +156,6 @@
           id="left-hand"
           oculus-touch-controls="hand:left"
           teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger"
-          playball
         >
           <a-entity
             text="value: use thumbsticks to\nmove and rotate;xOffset:-.1"

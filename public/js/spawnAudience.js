@@ -1,4 +1,5 @@
-AFRAME.registerComponent('spawnAudience', {
+count = count + 1;
+AFRAME.registerComponent('spawnaudience', {
   schema: {
     radius: {type: 'number', default: 1}
   },
@@ -6,10 +7,10 @@ AFRAME.registerComponent('spawnAudience', {
   init: function() {
     var el = this.el;
     var center = el.getAttribute('position');
-    var nextSeat = this.getPreviosPosition(); 
+    var nextSeat = count; 
     var angleRad = this.getRandomAngleInRadians();
     var circlePoint = this.randomPointOnCircle(this.data.radius, angleRad);
-    
+    var players = document.querySelectorAll(".ball");
     var worldPoint = {x: circlePoint.x + center.x, y: center.y+1.2, z: circlePoint.y + center.z};
     
     el.setAttribute('position', worldPoint);
@@ -20,6 +21,7 @@ AFRAME.registerComponent('spawnAudience', {
     var angleRad = THREE.Math.degToRad(angleToCenter);
     el.object3D.rotation.set(0, angleRad, 0);
     console.log('angle deg', angleDeg);
+    console.log('count', count);
   },
 
   getRandomAngleInRadians: function() {
@@ -30,10 +32,6 @@ AFRAME.registerComponent('spawnAudience', {
     var x = Math.cos(angleRad)*radius;
     var y = Math.sin(angleRad)*radius;
     return {x: x, y: y};
-  },
-  
-  getPreviousPosition: function(){
-    return count++;
   }
   
 });
