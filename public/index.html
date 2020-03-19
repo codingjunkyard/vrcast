@@ -37,7 +37,8 @@
           src="https://cdn.glitch.com/bcd20947-b0a2-41ba-9449-90fc5e417806%2Fufo.glb?v=1575495336711"
           crossorigin="anonymous"
         ></a-asset-items>
-        <img />
+        <img  id="360image" src="https://cdn.glitch.com/b2dbdaf1-f7c7-4197-ace3-e5c37542aa66%2F9FF3051E-83A2-42C9-84B3-D3303FD1A3C0.JPG?v=1583250610909"/>
+        <!-- Single source video. -->
         <video></video>
         <audio
           id="dreams"
@@ -102,8 +103,8 @@
         </template>
 
         <template id="body">
-          <!--< <a-box></a-box>-->
-         <a-entity>
+          <a-box></a-box>
+         <!--< <a-entity>
            <a-gltf-model
               src="#ufo"
               position="-5 -5 0"
@@ -111,24 +112,14 @@
               rotation=""
               animation-mixer=""
             ></a-gltf-model>
-          </a-entity>
+          </a-entity>-->
         </template>
-      </a-assets>
-
+      </a-assets> 
       
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <!--START HERE -->
-      <a-entity id="environment" environment="preset: default"></a-entity>
+      <!--START HERE <a-entity id="environment" environment="preset: default"></a-entity> -->
+      <a-sky src="#360image" radius="100" position="0 0 0">
+      </a-sky> 
 
       <!-- The Player rig. -->
       <a-entity
@@ -171,8 +162,8 @@
         </a-entity>
       </a-entity>
 
-      <!-- The VR Console. -->
-      <a-log position="-1.5 1.6 -1.25" rotation="0 45 0"></a-log>
+      <!-- The VR Console.       <a-log position="-1.5 1.6 -1.25" rotation="0 45 0"></a-log>-->
+
 
       <!--Interactive planes-->
       <a-entity
