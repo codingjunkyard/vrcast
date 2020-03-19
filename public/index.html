@@ -28,7 +28,7 @@
     <a-scene stats elog networked-scene>
       <a-assets>
         <a-asset-items
-          id="GLTF"
+          id="GLTF"                       
           src="https://cdn.glitch.com/bcd20947-b0a2-41ba-9449-90fc5e417806%2Fstargate.glb?v=1575348839083"
           crossorigin="anonymous"
         ></a-asset-items>
@@ -37,9 +37,14 @@
           src="https://cdn.glitch.com/bcd20947-b0a2-41ba-9449-90fc5e417806%2Fufo.glb?v=1575495336711"
           crossorigin="anonymous"
         ></a-asset-items>
-        <img  id="360image" src="https://cdn.glitch.com/b2dbdaf1-f7c7-4197-ace3-e5c37542aa66%2F9FF3051E-83A2-42C9-84B3-D3303FD1A3C0.JPG?v=1583250610909"/>
+        <img  id="360image" src="https://cdn.glitch.com/a1665d7b-f8ce-4bf4-98df-7ba3d4a83c9c%2Fmisty_pines_1k.jpg?v=1584647809261"/>
         <!-- Single source video. -->
-        <video></video>
+        <video id="video" style="display:none" 
+               autoplay loop crossorigin="anonymous" playsinline webkit-playsinline>
+          <!-- MP4 video source. -->
+          <source type="video/mp4"
+                  src="https://cdn.glitch.com/a1665d7b-f8ce-4bf4-98df-7ba3d4a83c9c%2FWorld%20-%201992.mp4?v=1584646943863" />
+        </video>
         <audio
           id="dreams"
           src="https://cdn.glitch.com/bcd20947-b0a2-41ba-9449-90fc5e417806%2FDreams.mp3?v=1575241249376"
@@ -254,14 +259,15 @@
         </a-text>
       </a-entity>
 
-      <!--the GLTF model to import-->
-      <a-gltf-model
+      <!--the GLTF model to import<a-gltf-model
         src="#GLTF"
         position="0 3 -8"
         scale="3 3 3"
         rotation=""
         animation-mixer=""
-      ></a-gltf-model>
+      ></a-gltf-model>-->
+      
+      <a-video src="#video" width="16" height="9" position="0 5 -20"></a-video>
     </a-scene>
   </body>
 </html>
