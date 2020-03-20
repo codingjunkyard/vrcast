@@ -153,7 +153,7 @@
           networked="template:#avatar-template;attachTemplateToLocal:false;"
           camera
           cursor="rayOrigin: mouse"
-        ><a-entity video-controls="src:#video; distance: 10; size: 5" ></a-entity>
+        ><a-entity video-controls="src:#video; distance: 10; size: 5"></a-entity>
         </a-camera>
         <a-entity
           id="left-hand"
@@ -259,6 +259,7 @@
           event-set__leave2="_event:mouseleave;_target: #video; visible: false"
           event-set__click1="_event: click; _target: #environment; environment.preset:egypt"
           event-set__click2="_event: click; _target: #controlText; value: environment set to egypt; visible:true"
+          
         ></a-entity>
 
         <a-text
@@ -282,7 +283,7 @@
       ></a-gltf-model>-->
 
      
-      <a-video src="#video" width="16" height="9" position="0 5 -20"></a-video>
+      <a-video networked src="#video" width="16" height="9" position="0 5 -20"></a-video>
       
     </a-scene>
   </body>
