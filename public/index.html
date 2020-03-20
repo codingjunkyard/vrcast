@@ -153,7 +153,7 @@
           networked="template:#avatar-template;attachTemplateToLocal:false;"
           camera
           cursor="rayOrigin: mouse"
-        >
+        ><a-entity video-controls="src:#video; distance: 10; size: 5" ></a-entity>
         </a-camera>
         <a-entity
           id="left-hand"
@@ -282,10 +282,8 @@
       ></a-gltf-model>-->
 
      
-      <a-video src="#video" width="16" height="9" position="0 5 -20"> 
-        
-      </a-video>
-      <a-entity video-controls="src:#video" position="0 5 -15"></a-entity>
+      <a-video src="#video" width="16" height="9" position="0 5 -20"></a-video>
+      
     </a-scene>
   </body>
 </html>
