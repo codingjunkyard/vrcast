@@ -18,18 +18,17 @@
     <script src="js/spawn-in-circle.component.js"></script>
 
     <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script>
-
+<script src="https://unpkg.com/naf-easyrtc-adapter/dist/naf-easyrtc-adapter.min.js"></script> 
     
     <script src="easyrtc/easyrtc.js"></script>
     <script src="js/spawnAudience.js"></script>
     <script src="js/rotate-player.js"></script>
     <script src="js/complog.js"></script>
-    <script src="js/event.js"></script>
     <script src="js/playball.js"></script>
   </head>
 
-  <body>
-    <a-scene elog networked-scene>
+  <body><!---->
+    <a-scene elog networked-scene="adapter:easyrtc;audio:true; debug: true">
       <a-assets>
         <a-asset-items
           id="GLTF"
@@ -283,7 +282,7 @@
       ></a-gltf-model>-->
 
      
-      <a-video networked src="#video" width="16" height="9" position="0 5 -20"></a-video>
+      <a-video src="#video" width="16" height="9" position="0 5 -20"></a-video>
       
     </a-scene>
   </body>
