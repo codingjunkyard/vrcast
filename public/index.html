@@ -18,8 +18,8 @@
     <script src="js/spawn-in-circle.component.js"></script>
 
     <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script>
-<script src="https://unpkg.com/naf-easyrtc-adapter/dist/naf-easyrtc-adapter.min.js"></script> 
-    
+    <script src="https://unpkg.com/naf-easyrtc-adapter/dist/naf-easyrtc-adapter.min.js"></script>
+
     <script src="easyrtc/easyrtc.js"></script>
     <script src="js/spawnAudience.js"></script>
     <script src="js/rotate-player.js"></script>
@@ -27,7 +27,8 @@
     <script src="js/playball.js"></script>
   </head>
 
-  <body><!--="adapter:easyrtc;audio:true; debug: true"-->
+  <body>
+    <!--="adapter:easyrtc;audio:true; debug: true"-->
     <a-scene elog networked-scene>
       <a-assets>
         <a-asset-items
@@ -83,15 +84,14 @@
 
         <!-- Avatar networked-audio-source-->
         <template id="avatar-template">
-          <a-entity class="avatar" >
-            <a-gltf-model
-        src="#GLTF"
-        position="0 0 0"
-        scale="1 1 1"
-        rotation=""
-        animation-mixer=""
-      ></a-gltf-model>
-            <!--<a-sphere
+          <a-entity class="avatar">
+           <a-gltf-model
+              src="#seanHead"
+              position="0 0 0"
+              scale="6 6 6"
+              rotation=""
+            ></a-gltf-model>
+            <!-- <a-sphere
               class="head"
               color="#5985ff"
               scale="0.45 0.5 0.4"
@@ -159,7 +159,9 @@
           networked="template:#avatar-template;attachTemplateToLocal:false;"
           camera
           cursor="rayOrigin: mouse"
-        ><a-entity video-controls="src:#video; distance: 10; size: 5"></a-entity>
+          ><a-entity
+            video-controls="src:#video; distance: 10; size: 5"
+          ></a-entity>
         </a-camera>
         <a-entity
           id="left-hand"
@@ -280,17 +282,24 @@
         </a-text>
       </a-entity>-->
 
-      <!--the GLTF model to import-->
-<a-gltf-model
+      <!--the GLTF model to import<a-gltf-model
         src="#GLTF"
         position="90 -60 20"
         scale="4 4 4"
         rotation=""
         animation-mixer=""
-      ></a-gltf-model>
-
-    <a-video src="#video" width="16" height="9" position="-14.95907 5 -49.39656" material="" geometry="" rotation="0 35 0"></a-video>
+      ></a-gltf-model>-->
       
+
+      <a-video
+        src="#video"
+        width="16"
+        height="9"
+        position="-14.95907 5 -49.39656"
+        material=""
+        geometry=""
+        rotation="0 35 0"
+      ></a-video>
     </a-scene>
   </body>
 </html>
