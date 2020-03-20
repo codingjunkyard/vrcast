@@ -27,8 +27,8 @@
     <script src="js/playball.js"></script>
   </head>
 
-  <body><!---->
-    <a-scene elog networked-scene="adapter:easyrtc;audio:true; debug: true">
+  <body><!--="adapter:easyrtc;audio:true; debug: true"-->
+    <a-scene elog networked-scene>
       <a-assets>
         <a-asset-items
           id="GLTF"
@@ -81,9 +81,9 @@
         >
         </a-mixin>
 
-        <!-- Avatar -->
+        <!-- Avatar networked-audio-source-->
         <template id="avatar-template">
-          <a-entity class="avatar" networked-audio-source>
+          <a-entity class="avatar" >
             <a-sphere
               class="head"
               color="#5985ff"
@@ -273,13 +273,14 @@
         </a-text>
       </a-entity>
 
-      <!--the GLTF model to import<a-gltf-model
+      <!--the GLTF model to import-->
+<a-gltf-model
         src="#GLTF"
         position="0 3 -8"
         scale="3 3 3"
         rotation=""
         animation-mixer=""
-      ></a-gltf-model>-->
+      ></a-gltf-model>
 
      
       <a-video src="#video" width="16" height="9" position="0 5 -20"></a-video>
