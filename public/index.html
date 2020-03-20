@@ -26,7 +26,7 @@
   </head>
 
   <body>
-    <a-scene stats elog networked-scene>
+    <a-scene elog networked-scene>
       <a-assets>
         <a-asset-items
           id="GLTF"
@@ -40,7 +40,7 @@
         ></a-asset-items>
         <img
           id="360image"
-          src="https://cdn.glitch.com/a1665d7b-f8ce-4bf4-98df-7ba3d4a83c9c%2FTreeCanopy.jpg?v=1584667824732"
+          src="https://cdn.glitch.com/a1665d7b-f8ce-4bf4-98df-7ba3d4a83c9c%2FField2.jpg?v=1584668550591"
         />
         <!-- Single source video.playsinline -->
         <video
@@ -49,7 +49,6 @@
           autoplay
           loop
           crossorigin="anonymous"
-          
           webkit-playsinline
         >
           <!-- MP4 video source. -->
@@ -57,7 +56,6 @@
             type="video/mp4"
             src="https://cdn.jsdelivr.net/gh/107pilot/vr@master/World1992.mp4"
           />
-          
         </video>
         <audio
           id="dreams"
@@ -143,7 +141,6 @@
         movement-controls
         rotateplayer
         spawn-in-circle="radius:7"
-        
         networked="template:#body;attachTemplateToLocal:false;"
         look-controls
       >
@@ -183,13 +180,14 @@
       <!--Interactive planes-->
       <a-entity
         layout="type: box; margin: 0.06"
-        position="0.8 1 -0.6"
-        rotation="0 -30 0"
+        position="-11 2 -20"
+        rotation="0 0 0"
+        scale="9 11 0"
       >
         <a-entity
           geometry="primitive: plane; height: auto; width: 0.5"
           material="color: black"
-          text="align: center; width: 1; value: japan"
+          text="align: center; width: 1; value: Slide 1"
           event-set__enter1="_event:mouseenter;material.color: red"
           event-set__leave1="_event:mouseleave;material.color: black"
           event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
@@ -199,7 +197,7 @@
         <a-entity
           geometry="primitive: plane; height: auto; width: 0.5"
           material="color: black"
-          text="align: center; width: 1; value: volcano"
+          text="align: center; width: 1; value: Slide 2"
           event-set__enter1="_event:mouseenter;material.color: blue"
           event-set__leave1="_event:mouseleave;material.color: black"
           event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
@@ -209,7 +207,7 @@
         <a-entity
           geometry="primitive: plane; height: auto; width: 0.5"
           material="color: black"
-          text="align: center; width: 1; value: starry"
+          text="align: center; width: 1; value: Slide 3"
           event-set__enter1="_event:mouseenter;material.color: blue"
           event-set__leave1="_event:mouseleave;material.color: black"
           event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
@@ -219,7 +217,7 @@
         <a-entity
           geometry="primitive: plane; height: auto; width: 0.5"
           material="color: black"
-          text="align: center; width: 1; value: tron"
+          text="align: center; width: 1; value: Slide 4"
           event-set__enter1="_event:mouseenter;material.color: blue"
           event-set__leave1="_event:mouseleave;material.color: black"
           event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
@@ -229,7 +227,7 @@
         <a-entity
           geometry="primitive: plane; height: auto; width: 0.5"
           material="color: black"
-          text="align: center; width: 1; value: checkerboard"
+          text="align: center; width: 1; value: Slide 5"
           event-set__enter1="_event:mouseenter;material.color: blue"
           event-set__leave1="_event:mouseleave;material.color: black"
           event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
@@ -239,7 +237,7 @@
         <a-entity
           geometry="primitive: plane; height: auto; width: 0.5"
           material="color: black"
-          text="align: center; width: 1; value: forest"
+          text="align: center; width: 1; value: Video 1"
           event-set__enter1="_event:mouseenter;material.color: blue"
           event-set__leave1="_event:mouseleave;material.color: black"
           event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
@@ -249,7 +247,7 @@
         <a-entity
           geometry="primitive: plane; height: auto; width: 0.5"
           material="color: black"
-          text="align: center; width: 1; value: egypt"
+          text="align: center; width: 1; value: Video 2"
           event-set__enter1="_event:mouseenter;material.color: blue"
           event-set__leave1="_event:mouseleave;material.color: black"
           event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
