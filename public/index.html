@@ -36,8 +36,8 @@
           crossorigin="anonymous"
         ></a-asset-items>
         <a-asset-items
-          id="ufo"
-          src="https://cdn.glitch.com/bcd20947-b0a2-41ba-9449-90fc5e417806%2Fufo.glb?v=1575495336711"
+          id="seanHead"
+          src="https://cdn.glitch.com/a1665d7b-f8ce-4bf4-98df-7ba3d4a83c9c%2FseanPicAvatar.glb?v=1584739379100"
           crossorigin="anonymous"
         ></a-asset-items>
         <img
@@ -84,7 +84,14 @@
         <!-- Avatar networked-audio-source-->
         <template id="avatar-template">
           <a-entity class="avatar" >
-            <a-sphere
+            <a-gltf-model
+        src="#GLTF"
+        position="0 0 0"
+        scale="1 1 1"
+        rotation=""
+        animation-mixer=""
+      ></a-gltf-model>
+            <!--<a-sphere
               class="head"
               color="#5985ff"
               scale="0.45 0.5 0.4"
@@ -117,7 +124,7 @@
                   scale="0.2 0.2 0.2"
                 ></a-sphere>
               </a-sphere>
-            </a-entity>
+            </a-entity>-->
           </a-entity>
         </template>
 
