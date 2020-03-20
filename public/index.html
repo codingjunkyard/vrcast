@@ -17,6 +17,9 @@
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>
     <script src="js/spawn-in-circle.component.js"></script>
 
+    <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script>
+
+    
     <script src="easyrtc/easyrtc.js"></script>
     <script src="js/spawnAudience.js"></script>
     <script src="js/rotate-player.js"></script>
@@ -27,7 +30,7 @@
 
   <body>
     <a-scene elog networked-scene>
-      <a-assets>        
+      <a-assets>
         <a-asset-items
           id="GLTF"
           src="https://cdn.glitch.com/bcd20947-b0a2-41ba-9449-90fc5e417806%2Fstargate.glb?v=1575348839083"
@@ -47,10 +50,11 @@
           id="video"
           style="display:none"
           autoplay="false"
-          loop = "false"
+          loop="false"
           crossorigin="anonymous"
           webkit-playsinline
-        ><meta name="apple-mobile-web-app-capable" content="yes">
+        >
+          <meta name="apple-mobile-web-app-capable" content="yes" />
           <!-- MP4 video source. -->
           <source
             type="video/mp4"
@@ -148,7 +152,7 @@
           id="head"
           networked="template:#avatar-template;attachTemplateToLocal:false;"
           camera
-                  cursor="rayOrigin: mouse"
+          cursor="rayOrigin: mouse"
         >
         </a-camera>
         <a-entity
@@ -276,7 +280,11 @@
         animation-mixer=""
       ></a-gltf-model>-->
 
-      <a-video src="#video" width="16" height="9" position="0 5 -20"></a-video>
+     
+      <a-video src="#video" width="16" height="9" position="0 5 -20"> 
+        <a-entity video-controls="src:#video" position="0 -5 -2></a-entity>
+      </a-video>
+      
     </a-scene>
   </body>
 </html>
