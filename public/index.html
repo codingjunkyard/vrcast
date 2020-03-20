@@ -46,12 +46,12 @@
         <video
           id="video"
           style="display:none"
-          autoplay
-          loop
+          autoplay="false"
+          loop = "false"
           crossorigin="anonymous"
           webkit-playsinline
-        >
-          <!-- MP4 video source.https://cdn.jsdelivr.net/gh/107pilot/vr@master/World1992.mp4 -->
+        ><meta name="apple-mobile-web-app-capable" content="yes">
+          <!-- MP4 video source. -->
           <source
             type="video/mp4"
             src="https://cdn.jsdelivr.net/gh/107pilot/vr@master/World1992.mp4"
@@ -251,7 +251,7 @@
           text="align: center; width: 1; value: Video 2"
           event-set__enter1="_event:mouseenter;material.color: blue"
           event-set__leave1="_event:mouseleave;material.color: black"
-          event-set__leave2="_event:mouseleave;_target: #controlText; visible: false"
+          event-set__leave2="_event:mouseleave;_target: #video; visible: false"
           event-set__click1="_event: click; _target: #environment; environment.preset:egypt"
           event-set__click2="_event: click; _target: #controlText; value: environment set to egypt; visible:true"
         ></a-entity>
