@@ -136,7 +136,7 @@
       </a-assets>
 
       <!--START HERE <a-entity id="environment" environment="preset: default"></a-entity> -->
-      <a-sky src="#360image" radius="100" position="0 0 0"> </a-sky>
+      <a-sky src="#360image" radius="5000" position="0 0 0"> </a-sky>
 
       <!-- The Player rig. spawnaudience-->
       <a-entity
@@ -181,7 +181,7 @@
 
       <!-- The VR Console.       <a-log position="-1.5 1.6 -1.25" rotation="0 45 0"></a-log>-->
 
-      <!--Interactive planes-->
+      <!--Interactive planes
       <a-entity
         layout="type: box; margin: 0.06"
         position="-11 2 -20"
@@ -271,19 +271,18 @@
           scale=".25 .25 .25"
         >
         </a-text>
-      </a-entity>
+      </a-entity>-->
 
       <!--the GLTF model to import-->
 <a-gltf-model
         src="#GLTF"
-        position="0 -50 0"
-        scale="3 3 3"
+        position="90 -60 20"
+        scale="4 4 4"
         rotation=""
         animation-mixer=""
       ></a-gltf-model>
 
-     
-      <a-video src="#video" width="16" height="9" position="0 5 -20"></a-video>
+    <a-video src="#video" width="16" height="9" position="-14.95907 5 -49.39656" material="" geometry="" rotation="0 35 0"></a-video>
       
     </a-scene>
   </body>
