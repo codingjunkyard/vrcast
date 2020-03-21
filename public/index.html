@@ -152,13 +152,13 @@
       <!--START HERE <a-entity id="environment" environment="preset: default"></a-entity> -->
       <a-sky src="#360image" radius="5000" position="0 0 0"> </a-sky>
 
-      <!-- The Player rig. spawnaudience  spawn-in-circle="radius:7"  -->
+      <!-- The Player rig. spawnaudience spawn-grid="clone:#avatar-template"   -->
       <a-entity
         id="cameraRig"
         movement-controls
         rotateplayer
-        
-                spawn-grid="clone:#avatar-template"
+        spawn-in-circle="radius:7"
+                
         networked="template:#body;attachTemplateToLocal:false;"
         look-controls
       >
