@@ -18,6 +18,7 @@ AFRAME.registerComponent("playball", {
       ball.setAttribute("scale", "0.05 0.05 0.05");
       ball.setAttribute("position", point);
       ball.setAttribute("dynamic-body", "shape: sphere; sphereRadius:0.05; ");
+      ball.setAttribute("networked");
 
       //Getting raycaster which was attached to ctrlR or L
       var dir = this.getAttribute("raycaster").direction;
