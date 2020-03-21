@@ -85,7 +85,7 @@
         <!-- Avatar networked-audio-source-->
         <template id="avatar-template">
           <a-entity class="avatar">
-           <a-gltf-model
+            <a-gltf-model
               src="#seanHead"
               position="0 0 0"
               scale="6 6 6"
@@ -140,6 +140,13 @@
             ></a-gltf-model>
           </a-entity>-->
         </template>
+        <!-- Hand -->
+        <template id="hand-template">
+          <a-entity>
+            <a-box scale="0.1 0.1 0.1"></a-box>
+          </a-entity>
+        </template>
+        
       </a-assets>
 
       <!--START HERE <a-entity id="environment" environment="preset: default"></a-entity> -->
@@ -150,8 +157,7 @@
         id="cameraRig"
         movement-controls
         rotateplayer
- spawn-in-circle="radius:7"
-             
+        spawn-in-circle="radius:7"
         networked="template:#body;attachTemplateToLocal:false;"
         look-controls
       >
@@ -179,6 +185,7 @@
           laser-controls=""
           raycaster="far: 3"
           oculus-touch-controls="hand:right"
+          networked="template:#hand-template"
           playball
         >
           <a-entity
@@ -290,7 +297,6 @@
         rotation=""
         animation-mixer=""
       ></a-gltf-model>-->
-      
 
       <a-video
         src="#video"
