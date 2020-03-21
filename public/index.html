@@ -152,13 +152,20 @@
       <a-sky src="#360image" radius="5000" position="0 0 0" rotation="0 79 0">
       </a-sky>
 
+      <!-- stage performer -->
+      <a-entity
+                id="performer1"
+                networked="template:#body;attachTemplateToLocal:false;"
+                position="0 3 -60"
+                ></a-entity>
+      
       <!-- The Player rig. spawnaudience spawn-grid="clone:#avatar-template"   -->
       <a-entity
         id="cameraRig"
         movement-controls
         rotateplayer
         spawn-in-circle="radius:7"
-        networked="template:#body;attachTemplateToLocal:false;"
+        networked="template:#avatar-template;attachTemplateToLocal:false;"
         look-controls
       >
         <a-camera

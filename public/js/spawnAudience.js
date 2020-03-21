@@ -14,6 +14,7 @@ AFRAME.registerComponent('spawn-grid', {
   },
 
   init: function() {
+    
     this.clone = document.querySelector(this.data.clone);
     var y = this.el.getAttribute('position').y;
     for (var i = 0; i < this.data.rows; i++) {
