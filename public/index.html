@@ -33,7 +33,7 @@
       <a-assets>
         <a-asset-items
           id="GLTF"
-          src="https://cdn.glitch.com/a1665d7b-f8ce-4bf4-98df-7ba3d4a83c9c%2FguelphStation.glb?v=1584733961427"
+          src="https://cdn.glitch.com/a1665d7b-f8ce-4bf4-98df-7ba3d4a83c9c%2Fstage.glb?v=1584794626644"
           crossorigin="anonymous"
         ></a-asset-items>
         <a-asset-items
@@ -146,11 +146,10 @@
             <a-box scale="0.1 0.1 0.1"></a-box>
           </a-entity>
         </template>
-        
       </a-assets>
 
       <!--START HERE <a-entity id="environment" environment="preset: default"></a-entity> -->
-      <a-sky src="#360image" radius="5000" position="0 0 0"> </a-sky>
+      <a-sky src="#360image" radius="5000" position="0 0 0" rotation="0 79 0"> </a-sky>
 
       <!-- The Player rig. spawnaudience spawn-grid="clone:#avatar-template"   -->
       <a-entity
@@ -158,7 +157,6 @@
         movement-controls
         rotateplayer
         spawn-in-circle="radius:7"
-                
         networked="template:#body;attachTemplateToLocal:false;"
         look-controls
       >
@@ -179,8 +177,8 @@
           <a-entity
             text="value: use thumbsticks to\nmove and rotate;xOffset:-.1"
             rotation="-90 0 0"
-          ></a-entity>
-        </a-entity><!---->
+          ></a-entity> </a-entity
+        ><!---->
         <a-entity
           id="right-hand"
           laser-controls=""
@@ -291,13 +289,14 @@
         </a-text>
       </a-entity>-->
 
-      <!--the GLTF model to import<a-gltf-model
+      <!--the GLTF model to import-->
+      <a-gltf-model
         src="#GLTF"
-        position="90 -60 20"
-        scale="4 4 4"
+        position="0 -3 -60"
+        scale="2 2 2"
         rotation=""
         animation-mixer=""
-      ></a-gltf-model>-->
+      ></a-gltf-model>
 
       <a-video
         src="#video"
@@ -307,6 +306,16 @@
         material=""
         geometry=""
         rotation="0 35 0"
+        networked
+      ></a-video>
+      <a-video
+        src="#video"
+        width="16"
+        height="9"
+        position="14.95907 5 -49.39656"
+        material=""
+        geometry=""
+        rotation="0 -35 0"
         networked
       ></a-video>
     </a-scene>
