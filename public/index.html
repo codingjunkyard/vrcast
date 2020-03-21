@@ -149,7 +149,8 @@
       </a-assets>
 
       <!--START HERE <a-entity id="environment" environment="preset: default"></a-entity> -->
-      <a-sky src="#360image" radius="5000" position="0 0 0" rotation="0 79 0"> </a-sky>
+      <a-sky src="#360image" radius="5000" position="0 0 0" rotation="0 79 0">
+      </a-sky>
 
       <!-- The Player rig. spawnaudience spawn-grid="clone:#avatar-template"   -->
       <a-entity
@@ -302,21 +303,29 @@
         src="#video"
         width="16"
         height="9"
-        position="-14.95907 5 -49.39656"
+        position="-28 10 -55"
         material=""
         geometry=""
         rotation="0 35 0"
-        networked
       ></a-video>
       <a-video
         src="#video"
         width="16"
         height="9"
-        position="14.95907 5 -49.39656"
+        position="28 10 -55"
         material=""
         geometry=""
         rotation="0 -35 0"
-        networked
+      ></a-video>
+      <a-video
+        src="#video"
+        width="16"
+        height="9"
+        position="0 11.50087 -73.69576"
+        material=""
+        geometry=""
+        rotation=""
+        scale="2.5 2.5 2.5"
       ></a-video>
     </a-scene>
   </body>
