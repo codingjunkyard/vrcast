@@ -157,8 +157,14 @@
           <a-entity class="avatar">
             <a-gltf-model
               src="#seanHead"
-              position="0 0 0"
+              position="0 1.4 0"
               scale="6 6 6"
+              rotation="0 0 0"
+            ></a-gltf-model>
+            <a-gltf-model
+              src="#seanBody"
+              position="0 -2 0"
+              scale="1 1 1"
               rotation="0 0 0"
             ></a-gltf-model>
           </a-entity>
@@ -191,7 +197,7 @@
           camera
           cursor="rayOrigin: mouse"
           ><a-entity
-            video-controls="src:#video; distance: 10; size: 5"
+            video-controls="src:#video; distance: 8; size: 4"
           ></a-entity>
         </a-camera>
         <a-entity
