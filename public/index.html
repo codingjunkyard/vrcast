@@ -28,8 +28,8 @@
   </head>
 
   <body>
-    <!--="adapter:easyrtc;audio:true; debug: true"-->
-    <a-scene elog networked-scene>
+    <!--debug: true"-->
+    <a-scene elog networked-scene="adapter:easyrtc;audio:true;" >
       <a-assets>
         <a-asset-items
           id="GLTF"
@@ -87,8 +87,8 @@
         >
         </a-mixin>
 
-        <!-- Avatar networked-audio-source-->
-        <template id="avatar-template">
+        <!-- Avatar -->
+        <template id="avatar-template"networked-audio-source>
           <a-entity class="avatar">
             <a-gltf-model
               src="#seanHead"
