@@ -1,12 +1,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Dev Example — Networked-Aframe</title>
+    <title>Basic</title>
     <meta name="description" content="Dev Example — Networked-Aframe">
 
-    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.slim.js"></script>
-    <script>window.NAF || document.write('<script src="https://unpkg.com/networked-aframe/dist/networked-aframe.min.js">\x3C/script>')</script>
 
     <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>
@@ -85,33 +84,5 @@
       <a-entity id="particles" particle-system="preset: snow"></a-entity>
     </a-scene>
 
-    <script>
-      // Define custom schema for syncing avatar color, set by random-color
-      NAF.schemas.add({
-        template: '#avatar-template',
-        components: [
-          'position',
-          'rotation',
-          {
-            selector: '.head',
-            component: 'material',
-            property: 'color'
-          }
-        ]
-      });
-
-      // Called by Networked-Aframe when connected to server
-      function onConnect () {
-        console.log("onConnect", new Date());
-      }
-
-      // On mobile remove elements that are resource heavy
-      var isMobile = AFRAME.utils.device.isMobile();
-
-      if (isMobile) {
-        var particles = document.getElementById('particles');
-        particles.parentNode.removeChild(particles);
-      }
-    </script>
   </body>
 </html>
