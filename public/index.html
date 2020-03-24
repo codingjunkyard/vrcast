@@ -8,6 +8,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.slim.js"></script>
     <script src="https://unpkg.com/networked-aframe/dist/networked-aframe.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.controls.min.js"></script>
+
+    
+    
     <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>
 
@@ -73,15 +77,17 @@
             ></a-gltf-model>
           </a-entity>
         </template>
+        <!--Avatar Body-->
         <template id="body">
           <a-box></a-box>
         </template>
-        <!-- Hand -->
+        <!-- Avatar Hand -->
         <template id="hand-template">
           <a-entity>
             <a-box scale="0.1 0.1 0.1"></a-box>
           </a-entity>
         </template>
+        
         <!-- Performer 1 -->
         <template id="performer1">
           <a-entity class="avatar">
@@ -126,13 +132,12 @@
           camera
           cursor="rayOrigin: mouse"
           ><a-entity
-            video-controls="src:#video; distance: 8; size: 4"
+            video-controls="src:#video; distance: 6; size: 2"
           ></a-entity>
         </a-camera>
         <a-entity
           id="left-hand"
           oculus-touch-controls="hand:left"
-          teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger"
         >
           <a-entity
             text="value: use thumbsticks to\nmove and rotate;xOffset:-.1"
@@ -196,7 +201,5 @@
       <a-plane material="src:#imgGround; repeat: 20 20" rotation="-90 0 0" height="100" width="100" geometry="height: 200; width: 200" position="0 -3.02 0"></a-plane>
       
     </a-scene>
-
-
   </body>
 </html>
