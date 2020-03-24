@@ -4,7 +4,7 @@
     <title>Dev Example — Networked-Aframe</title>
     <meta name="description" content="Dev Example — Networked-Aframe">
 
-    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.slim.js"></script>
     <script>window.NAF || document.write('<script src="https://unpkg.com/networked-aframe/dist/networked-aframe.min.js">\x3C/script>')</script>
 
@@ -14,7 +14,7 @@
   </head>
   
   <body>
-    <a-scene networked-scene="adapter: socketio;">
+    <a-scene networked-scene="adapter: socketio; audio:true">
       <a-assets>
 
         <img id="grid" src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" crossorigin="anonymous">
@@ -24,7 +24,7 @@
 
         <!-- Avatar -->
         <template id="avatar-template">
-          <a-entity class="avatar">
+          <a-entity class="avatar" networked-audio-source>
             <a-sphere class="head"
               color="#ffffff"
               scale="0.45 0.5 0.4"
