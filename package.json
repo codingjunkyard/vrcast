@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "networked-aframe": "^0.7.0"
+    "buffered-interpolation": "^0.2.5",
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
   },
   "engines": {
     "node": "6.9.x"
