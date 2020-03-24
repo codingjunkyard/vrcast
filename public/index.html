@@ -1,8 +1,8 @@
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Basic</title>
-    <meta name="description" content="Dev Example — Networked-Aframe">
+    <meta name="description" content="Dev Example — Networked-Aframe" />
 
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.slim.js"></script>
@@ -10,108 +10,193 @@
 
     <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>
+
+    <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script>
+
+    <script src="js/rotate-player.js"></script>
     <script src="/js/spawn-in-circle.component.js"></script>
   </head>
-  
+
   <body>
     <a-scene networked-scene="adapter: webrtc; audio:true">
       <a-assets>
-
-        <img id="grid" src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" crossorigin="anonymous">
-        <img id="sky" src="http://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous" />
+        <a-asset-items
+          id="GLTF"
+          src="https://cdn.glitch.com/a1665d7b-f8ce-4bf4-98df-7ba3d4a83c9c%2Fstage.glb?v=1584794626644"
+          crossorigin="anonymous"
+        ></a-asset-items>
+        <a-asset-items
+          id="seanHead"
+          src="https://cdn.glitch.com/a1665d7b-f8ce-4bf4-98df-7ba3d4a83c9c%2FseanPicAvatar.glb?v=1584739379100"
+          crossorigin="anonymous"
+        ></a-asset-items>
+        <a-asset-items
+          id="seanBody"
+          src="https://cdn.glitch.com/a1665d7b-f8ce-4bf4-98df-7ba3d4a83c9c%2FlowPolyMale.glb?v=1584797381490"
+          crossorigin="anonymous"
+        ></a-asset-items>
+        <img
+          id="360image"
+          src="https://cdn.glitch.com/a1665d7b-f8ce-4bf4-98df-7ba3d4a83c9c%2FField2.jpg?v=1584668550591"
+        />
+        <img
+          id="imgGround"
+          src="https://cdn.glitch.com/a1665d7b-f8ce-4bf4-98df-7ba3d4a83c9c%2Fgrass.jpg?v=1585010972754"
+        />
+        <!-- Single source video.playsinline -->
+        <video
+          id="video"
+          style="display:none"
+          autoplay="false"
+          loop="false"
+          crossorigin="anonymous"
+          webkit-playsinline
+        >
+          <meta name="apple-mobile-web-app-capable" content="yes" />
+          <!-- MP4 video source.src="https://cdn.jsdelivr.net/gh/107pilot/vr@master/World1992.mp4" -->
+          <source
+            type="video/mp4"
+            src="https://cdn.glitch.com/a1665d7b-f8ce-4bf4-98df-7ba3d4a83c9c%2FRocket%20Launch%20-%20226.mp4?v=1585000246103"
+          />
+        </video>
 
         <!-- Templates -->
 
         <!-- Avatar -->
         <template id="avatar-template">
           <a-entity class="avatar" networked-audio-source>
-            <a-sphere class="head"
-              color="#ffffff"
-              scale="0.45 0.5 0.4"
-            ></a-sphere>
-            <a-entity class="face"
-              position="0 0.05 0"
-            >
-              <a-sphere class="eye"
-                color="#efefef"
-                position="0.16 0.1 -0.35"
-                scale="0.12 0.12 0.12"
-              >
-                <a-sphere class="pupil"
-                  color="#000"
-                  position="0 0 -1"
-                  scale="0.2 0.2 0.2"
-                ></a-sphere>
-              </a-sphere>
-              <a-sphere class="eye"
-                color="#efefef"
-                position="-0.16 0.1 -0.35"
-                scale="0.12 0.12 0.12"
-              >
-                <a-sphere class="pupil"
-                  color="#000"
-                  position="0 0 -1"
-                  scale="0.2 0.2 0.2"
-                ></a-sphere>
-              </a-sphere>
-            </a-entity>
+            <a-gltf-model
+              src="#seanHead"
+              position="0 0 0"
+              scale="6 6 6"
+              rotation="0 180 0"
+            ></a-gltf-model>
           </a-entity>
         </template>
-
-        <!-- /Templates -->
+        <template id="body">
+          <a-box></a-box>
+        </template>
+        <!-- Hand -->
+        <template id="hand-template">
+          <a-entity>
+            <a-box scale="0.1 0.1 0.1"></a-box>
+          </a-entity>
+        </template>
+        <!-- Performer 1 -->
+        <template id="performer1">
+          <a-entity class="avatar">
+            <a-gltf-model
+              src="#seanHead"
+              position="0 1.4 0"
+              scale="6 6 6"
+              rotation="0 0 0"
+            ></a-gltf-model>
+            <a-gltf-model
+              src="#seanBody"
+              position="0 -2 0"
+              scale="1 1 1"
+              rotation="0 0 0"
+            ></a-gltf-model>
+          </a-entity>
+        </template>
       </a-assets>
 
-      <a-entity id="player"
+      <a-sky src="#360image" radius="100" position="0 0 0" rotation="0 79 0">
+      </a-sky>
+
+      <!-- stage performer -->
+      <a-entity
+        class="performer"
+        networked="template:#performer1"
+        position="0 5 -60"
+      ></a-entity>
+
+     <!-- The Player rig. spawnaudience spawn-grid="clone:#avatar-template"   -->
+      <a-entity
+        id="cameraRig"
+        movement-controls
+        rotateplayer
+        spawn-in-circle="radius:7"
         networked="template:#avatar-template;attachTemplateToLocal:false;"
-        camera
-        position="0 1.6 0"
-        spawn-in-circle="radius:3"
-        wasd-controls look-controls
+        look-controls
+      >
+        <a-camera
+          id="head"
+          networked="template:#avatar-template;attachTemplateToLocal:false;"
+          camera
+          cursor="rayOrigin: mouse"
+          ><a-entity
+            video-controls="src:#video; distance: 8; size: 4"
+          ></a-entity>
+        </a-camera>
+        <a-entity
+          id="left-hand"
+          oculus-touch-controls="hand:left"
+          teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger"
         >
-        <a-sphere class="head"
-          visible="false"
-          random-color
-        ></a-sphere>
+          <a-entity
+            text="value: use thumbsticks to\nmove and rotate;xOffset:-.1"
+            rotation="-90 0 0"
+          ></a-entity> </a-entity
+        ><!---->
+        <a-entity
+          id="right-hand"
+          laser-controls=""
+          raycaster="far: 10"
+          oculus-touch-controls="hand:right"
+          networked="template:#hand-template"
+          playball
+        >
+          <a-entity
+            id="handText"
+            text="anchor: left; xOffset:.1; value: press A to switch\nmovement controls to other hand"
+            rotation="-90 0 0"
+          ></a-entity>
+        </a-entity>
       </a-entity>
+      <!--the GLTF model to import-->
+      <a-gltf-model
+        src="#GLTF"
+        position="0 -3 -60"
+        scale="2 2 2"
+        rotation=""
+        animation-mixer=""
+      ></a-gltf-model>
 
-      <a-entity position="0 0 0"
-        geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0"
-        material="src: #grid; repeat: 10000 10000; transparent: true; metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"></a-entity>
-
-      <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
-      <a-entity light="color: #ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
-
-      <a-sky src="#sky" rotation="0 -90 0"></a-sky>
-      <a-entity id="particles" particle-system="preset: snow"></a-entity>
+      <a-video
+        src="#video"
+        width="16"
+        height="9"
+        position="-28 10 -55"
+        material=""
+        geometry=""
+        rotation="0 35 0"
+      ></a-video>
+      <a-video
+        src="#video"
+        width="16"
+        height="9"
+        position="28 10 -55"
+        material=""
+        geometry=""
+        rotation="0 -35 0"
+      ></a-video>
+      <a-video
+        src="#video"
+        width="16"
+        height="9"
+        position="0 11.50087 -73.69576"
+        material=""
+        geometry=""
+        rotation=""
+        scale="2.5 2.5 2.5"
+      ></a-video>
+      
+      <!--Ground plane-->
+      <a-plane material="src:#imgGround; repeat: 20 20" rotation="-90 0 0" height="100" width="100" geometry="height: 200; width: 200" position="0 -3.02 0"></a-plane>
+      
     </a-scene>
 
-    <script>
-      // Define custom schema for syncing avatar color, set by random-color
-      NAF.schemas.add({
-        template: '#avatar-template',
-        components: [
-          'position',
-          'rotation',
-          {
-            selector: '.head',
-            component: 'material',
-            property: 'color'
-          }
-        ]
-      });
 
-      // Called by Networked-Aframe when connected to server
-      function onConnect () {
-        console.log("onConnect", new Date());
-      }
-
-      // On mobile remove elements that are resource heavy
-      var isMobile = AFRAME.utils.device.isMobile();
-
-      if (isMobile) {
-        var particles = document.getElementById('particles');
-        particles.parentNode.removeChild(particles);
-      }
-    </script>
   </body>
 </html>
