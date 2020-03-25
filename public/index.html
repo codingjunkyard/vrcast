@@ -4,7 +4,7 @@
     <title>Basic</title>
     <meta name="description" content="Dev Example — Networked-Aframe" />
 
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.slim.js"></script>
     <script src="https://unpkg.com/networked-aframe/dist/networked-aframe.min.js"></script>
 
@@ -112,8 +112,7 @@ for devices without a mic input-->
         </template>
       </a-assets>
 
-      <a-sky src="#360image" radius="100" position="0 0 0" rotation="0 79 0">
-      </a-sky>
+      <a-sky src="#360image" radius="100" position="0 0 0" rotation="0 79 0"></a-sky>
 
       <!-- stage performer -->
       <a-entity
@@ -122,13 +121,12 @@ for devices without a mic input-->
         position="0 5 -60"
       ></a-entity>
 
-      <!-- The Player rig.  -->
+      <!-- The Player rig. networked="template:#body;attachTemplateToLocal:false;" -->
       <a-entity
         id="cameraRig"
         movement-controls
         rotateplayer
         spawn-in-circle="radius:7"
-        networked="template:#body;attachTemplateToLocal:false;"
         look-controls
       >
         <a-camera
