@@ -21,12 +21,14 @@
   </head>
 
   <body>
+    <!--audio;true;debug: true;  this becomes glitchy when introduced using webrtc and disallows network activity
+for devices without a mic input-->
     <a-scene networked-scene=
              "app: myApp;
               adapter:webrtc;
               room: room1;
-              audio:true;
-              debug: true;">
+              
+              ">
       <a-assets>
         <a-asset-items
           id="GLTF"
