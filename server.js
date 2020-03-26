@@ -51,7 +51,7 @@ io.on("connection", socket => {
     rooms[room].occupants[socket.id] = joinedTime;
     curRoom = room;
 
-    console.log(`${socket.id} joined room ${room}`);
+    console.log(`${socket.id} joined room ${room} at ${joinedTime}`);
     socket.join(room);
 
     socket.emit("connectSuccess", { joinedTime });
